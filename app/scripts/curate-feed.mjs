@@ -1,27 +1,10 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = join(fileURLToPath(import.meta.url), '..')
 
-interface FeedItem {
-  id: string
-  title: string
-  url: string
-  source: string
-  category: string
-  summary: string | null
-  image_url: string | null
-  published_at: number | null
-}
-
-interface CuratedItem extends FeedItem {
-  curated_category: string
-  curated_summary: string
-}
-
-const CATEGORIES = ['ai-news', 'tutorial', 'company-blog', 'solo-blog', 'wildcard'] as const
-type Category = typeof CATEGORIES[number]
+const CATEGORIES = ['ai-news', 'tutorial', 'company-blog', 'solo-blog', 'wildcard']
 
 const CATEGORIZATION_PROMPT = `Categorize this feed item into exactly ONE of these categories:
 - ai-news: AI research, models, company announcements, breakthroughs
@@ -42,7 +25,7 @@ Content: {{CONTENT}}
 
 Return ONLY the summary.`
 
-async function callLLM(apiKey: string, baseUrl: string, model: string, systemPrompt: string, userPrompt: string): Promise<string> {
+async function callLLM(apiKey, baseUrl, model, systemPrompt, userPrompt) {
   const res = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
     headers: {
@@ -69,7 +52,7 @@ async function callLLM(apiKey: string, baseUrl: string, model: string, systemPro
   return data.choices?.[0]?.message?.content?.trim() || ''
 }
 
-async function categorizeItem(apiKey: string, baseUrl: string, model: string, item: FeedItem): Promise<Category> {
+async function categorizeItem(apiKey, baseUrl, model, item) {
   const content = item.summary || item.title
   const prompt = CATEGORIZATION_PROMPT
     .replace('{{TITLE}}', item.title)
@@ -78,13 +61,13 @@ async function categorizeItem(apiKey: string, baseUrl: string, model: string, it
   try {
     const response = await callLLM(apiKey, baseUrl, model, '', prompt)
     const category = response.toLowerCase().trim()
-    return CATEGORIES.includes(category as Category) ? category as Category : 'wildcard'
+    return CATEGORIES.includes(category) ? category : 'wildcard'
   } catch {
     return 'wildcard'
   }
 }
 
-async function summarizeItem(apiKey: string, baseUrl: string, model: string, item: FeedItem): Promise<string> {
+async function summarizeItem(apiKey, baseUrl, model, item) {
   const content = item.summary || item.title
   const prompt = SUMMARIZATION_PROMPT
     .replace('{{TITLE}}', item.title)
@@ -115,7 +98,7 @@ async function main() {
 
   console.log(`Curating ${data.items.length} items...`)
 
-  const curated: CuratedItem[] = []
+  const curated = []
 
   for (let i = 0; i < data.items.length; i++) {
     const item = data.items[i]
