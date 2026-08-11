@@ -7,9 +7,14 @@ let dbPromise: Promise<Db> | null = null
 /** Singleton DB handle — opens via the platform adapter, migrates to latest. */
 export function getDb(): Promise<Db> {
   dbPromise ??= (async () => {
-    const db = await getPlatform().openDb()
-    await migrate(db)
-    return db
+    try {
+      const db = await getPlatform().openDb()
+      await migrate(db)
+      return db
+    } catch (err) {
+      dbPromise = null
+      throw err
+    }
   })()
   return dbPromise
 }
