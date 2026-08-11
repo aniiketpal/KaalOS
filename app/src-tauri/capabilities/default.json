@@ -1,0 +1,14 @@
+{
+  "identifier": "default",
+  "description": "Default permission set for KaalOS",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "sql:default",
+    "notification:default",
+    "fs:default",
+    "fs:allow-write-file",
+    "fs:allow-write-text-file",
+    "fs:allow-mkdir"
+  ]
+}

@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import './shared/ui/tokens.css';
+
+@theme {
+  --color-bg-primary:     var(--bg-primary);
+  --color-bg-secondary:   var(--bg-secondary);
+  --color-bg-tertiary:    var(--bg-tertiary);
+  --color-bg-hover:       var(--bg-hover);
+  --color-bg-active:      var(--bg-active);
+
+  --color-border-subtle:  var(--border-subtle);
+  --color-border-muted:   var(--border-muted);
+  --color-border-focus:   var(--border-focus);
+
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted:     var(--text-muted);
+  --color-text-inverse:   var(--text-inverse);
+
+  --color-accent-blue:    var(--accent-blue);
+  --color-accent-green:   var(--accent-green);
+  --color-accent-amber:   var(--accent-amber);
+  --color-accent-purple:  var(--accent-purple);
+  --color-accent-rose:    var(--accent-rose);
+  --color-accent-teal:    var(--accent-teal);
+
+  --color-success:        var(--success);
+  --color-warning:        var(--warning);
+  --color-error:           var(--error);
+  --color-info:           var(--info);
+
+  --color-xp-gold:        var(--xp-gold);
+  --color-xp-dim:         var(--xp-dim);
+
+  --font-sans:            var(--font-sans);
+  --font-mono:            var(--font-mono);
+  --font-serif:           var(--font-serif);
+
+  /* Durations + easings mapped so `duration-(--duration-fast)` /
+     `ease-(--ease-out-expo)` compile in Tailwind v4 */
+  --duration-instant:     var(--duration-instant);
+  --duration-fast:        var(--duration-fast);
+  --duration-normal:      var(--duration-normal);
+  --duration-slow:        var(--duration-slow);
+  --duration-slower:      var(--duration-slower);
+  --ease-out-expo:        var(--ease-out-expo);
+  --ease-out-back:        var(--ease-out-back);
+  --ease-in-out-quart:    var(--ease-in-out-quart);
+  --ease-spring:          var(--ease-spring);
+  --ease-bounce:          var(--ease-bounce);
+
+  --radius-sm:            var(--radius-sm);
+  --radius-md:            var(--radius-md);
+  --radius-lg:            var(--radius-lg);
+  --radius-xl:            var(--radius-xl);
+  --radius-2xl:           var(--radius-2xl);
+  --radius-full:          var(--radius-full);
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+* {
+  border-color: var(--border-subtle);
+}
