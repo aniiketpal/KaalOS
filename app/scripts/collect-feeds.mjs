@@ -1,29 +1,51 @@
 import { parseStringPromise } from 'xml2js'
-import { FEED_SOURCES, FeedSource } from '../src/core/feed/feed-sources.js'
 
-interface ParsedItem {
-  title: string
-  link: string
-  pubDate?: string
-  content?: string
-  summary?: string
-  'content:encoded'?: string
-  'media:thumbnail'?: Array<{ $: { url: string } }>
-  guid?: string
-}
+const FEED_SOURCES = [
+  // AI News
+  { name: 'Anthropic Engineering', url: 'https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml', category: 'ai-news' },
+  { name: 'Anthropic News', url: 'https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml', category: 'ai-news' },
+  { name: 'OpenAI Engineering', url: 'https://openai.com/news/engineering/rss.xml', category: 'ai-news' },
+  { name: 'OpenAI Research', url: 'https://openai.com/blog/rss.xml', category: 'ai-news' },
+  { name: 'Google DeepMind', url: 'https://deepmind.google/blog/rss.xml', category: 'ai-news' },
+  { name: 'Simon Willison', url: 'https://simonwillison.net/atom/everything/', category: 'ai-news' },
+  { name: 'The Batch — DeepLearning.AI', url: 'https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_the_batch.xml', category: 'ai-news' },
+  { name: 'Machine Learning Mastery', url: 'https://feeds.feedburner.com/MachineLearningMastery', category: 'ai-news' },
 
-interface FeedItem {
-  id: string
-  title: string
-  url: string
-  source: string
-  category: string
-  summary: string | null
-  image_url: string | null
-  published_at: number | null
-}
+  // Tutorials
+  { name: 'ByteByteGo', url: 'https://blog.bytebytego.com/feed', category: 'tutorial' },
+  { name: 'DEV Community — all', url: 'https://dev.to/feed', category: 'tutorial' },
+  { name: 'DEV Community — backend', url: 'https://dev.to/feed/tag/backend', category: 'tutorial' },
+  { name: 'Amigoscode', url: 'https://blog.amigoscode.com/feed', category: 'tutorial' },
+  { name: 'Computer Science Simplified', url: 'https://computersciencesimplified.substack.com/feed', category: 'tutorial' },
+  { name: 'The T-Shaped Dev', url: 'https://thetshaped.dev/feed', category: 'tutorial' },
 
-function hashUrl(url: string): string {
+  // Company Blogs
+  { name: 'Netflix Tech Blog', url: 'https://netflixtechblog.com/feed', category: 'company-blog' },
+  { name: 'Meta Engineering', url: 'https://engineering.fb.com/feed/', category: 'company-blog' },
+  { name: 'Slack Engineering', url: 'https://slack.engineering/feed/', category: 'company-blog' },
+  { name: 'Airbnb Engineering', url: 'https://medium.com/feed/airbnb-engineering', category: 'company-blog' },
+  { name: 'Pinterest Engineering', url: 'https://medium.com/feed/pinterest-engineering', category: 'company-blog' },
+  { name: 'GitHub Engineering', url: 'https://github.blog/engineering/feed/', category: 'company-blog' },
+  { name: 'Uber Engineering', url: 'https://eng.uber.com/feed/', category: 'company-blog' },
+
+  // Solo Engineers
+  { name: 'Julia Evans', url: 'https://jvns.ca/atom.xml', category: 'solo-blog' },
+  { name: 'Dan Luu', url: 'https://danluu.com/atom.xml', category: 'solo-blog' },
+  { name: 'Martin Fowler', url: 'https://martinfowler.com/feed.atom', category: 'solo-blog' },
+  { name: 'Addy Osmani', url: 'https://addyosmani.com/rss.xml', category: 'solo-blog' },
+  { name: 'Pragmatic Engineer', url: 'https://blog.pragmaticengineer.com/rss/', category: 'solo-blog' },
+  { name: 'Register Spill', url: 'https://registerspill.thorstenball.com/feed', category: 'solo-blog' },
+  { name: "Engineer's Codex", url: 'https://read.engineerscodex.com/feed', category: 'solo-blog' },
+  { name: 'Hamel Husain', url: 'https://hamel.dev/index.xml', category: 'solo-blog' },
+
+  // Curated Aggregators
+  { name: 'Hacker News', url: 'https://hnrss.org/frontpage', category: 'wildcard' },
+  { name: 'Lobsters', url: 'https://lobste.rs/rss', category: 'wildcard' },
+  { name: 'Reddit r/programming', url: 'https://www.reddit.com/r/programming/top/.rss?t=day', category: 'wildcard' },
+  { name: 'Reddit r/ExperiencedDevs', url: 'https://www.reddit.com/r/ExperiencedDevs/.rss', category: 'wildcard' },
+]
+
+function hashUrl(url) {
   let hash = 0
   for (let i = 0; i < url.length; i++) {
     const char = url.charCodeAt(i)
@@ -33,30 +55,30 @@ function hashUrl(url: string): string {
   return Math.abs(hash).toString(36)
 }
 
-function extractContent(item: ParsedItem): string {
+function extractContent(item) {
   if (item['content:encoded']?.[0]) return item['content:encoded'][0]
   if (item.content?.[0]) return item.content[0]
   if (item.summary?.[0]) return item.summary[0]
   return ''
 }
 
-function extractImage(item: ParsedItem): string | null {
+function extractImage(item) {
   if (item['media:thumbnail']?.[0]?.$?.url) return item['media:thumbnail'][0].$.url
   const content = extractContent(item)
   const imgMatch = content.match(/<img[^>]+src=["']([^"']+)["']/)
   return imgMatch?.[1] || null
 }
 
-function parseDate(dateStr?: string): number | null {
+function parseDate(dateStr) {
   if (!dateStr) return null
   const date = new Date(dateStr)
   return isNaN(date.getTime()) ? null : date.getTime()
 }
 
-async function fetchFeed(source: FeedSource): Promise<FeedItem[]> {
+async function fetchFeed(source) {
   try {
     const res = await fetch(source.url, {
-      headers: { 'User-Agent': 'LifeTracker-FeedCollector/1.0' },
+      headers: { 'User-Agent': 'KaalOS-FeedCollector/1.0' },
       signal: AbortSignal.timeout(15000),
     })
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -64,7 +86,7 @@ async function fetchFeed(source: FeedSource): Promise<FeedItem[]> {
     const xml = await res.text()
     const parsed = await parseStringPromise(xml, { explicitArray: true, mergeAttrs: true })
 
-    const items: ParsedItem[] = parsed.rss?.channel?.[0]?.item ?? parsed.feed?.entry ?? []
+    const items = parsed.rss?.channel?.[0]?.item ?? parsed.feed?.entry ?? []
 
     return items.map((item) => {
       const title = item.title?.[0] ?? 'Untitled'
@@ -75,7 +97,7 @@ async function fetchFeed(source: FeedSource): Promise<FeedItem[]> {
       const published = parseDate(item.pubDate?.[0] ?? item.published?.[0] ?? item.updated?.[0])
 
       return {
-        id: hashUrl(link || item.guid?.[0] ?? title),
+        id: hashUrl(link || (item.guid?.[0] ?? title)),
         title,
         url: link,
         source: source.name,
@@ -91,8 +113,8 @@ async function fetchFeed(source: FeedSource): Promise<FeedItem[]> {
   }
 }
 
-function deduplicate(items: FeedItem[]): FeedItem[] {
-  const seen = new Set<string>()
+function deduplicate(items) {
+  const seen = new Set()
   return items.filter((item) => {
     if (seen.has(item.id)) return false
     seen.add(item.id)
@@ -100,13 +122,13 @@ function deduplicate(items: FeedItem[]): FeedItem[] {
   })
 }
 
-async function collectAllFeeds(): Promise<FeedItem[]> {
+async function collectAllFeeds() {
   console.log(`Fetching ${FEED_SOURCES.length} feeds...`)
   const results = await Promise.allSettled(
     FEED_SOURCES.map((source) => fetchFeed(source))
   )
 
-  const allItems: FeedItem[] = []
+  const allItems = []
   let successCount = 0
 
   results.forEach((result, i) => {
