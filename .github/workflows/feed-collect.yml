@@ -1,0 +1,63 @@
+name: Collect & Curate Feed
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:      # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  collect-and-curate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd app
+          npm ci
+
+      - name: Install xml2js for feed parsing
+        run: |
+          cd app
+          npm install xml2js
+
+      - name: Collect feeds
+        run: |
+          cd app
+          node scripts/collect-feeds.mjs
+        env:
+          TOKEN_ROUTER_KEY: ${{ secrets.TOKEN_ROUTER_KEY }}
+
+      - name: Curate feeds with LLM
+        run: |
+          cd app
+          node scripts/curate-feed.mjs
+        env:
+          TOKEN_ROUTER_KEY: ${{ secrets.TOKEN_ROUTER_KEY }}
+          TOKEN_ROUTER_BASE: ${{ secrets.TOKEN_ROUTER_BASE || 'https://api.tokenrouter.com/v1' }}
+          TOKEN_ROUTER_MODEL: ${{ secrets.TOKEN_ROUTER_MODEL || 'kimi-k3' }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          publish_dir: ./app/feed-output
+          destination_dir: feed
+          keep_files: false
+          force_orphan: true
+
+      - name: Summary
+        run: |
+          echo "✅ Feed collection complete"
+          echo "📄 Feed available at: https://aniiketpal.github.io/KaalOS/feed/feed.json"
