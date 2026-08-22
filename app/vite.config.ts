@@ -13,6 +13,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
+      disable: true, // Desktop app: no service worker — stale SW caches old bundles
       registerType: 'autoUpdate',
       manifest: false, // use /public/manifest.webmanifest as source of truth
       includeAssets: ['manifest.webmanifest', 'favicon.svg'],

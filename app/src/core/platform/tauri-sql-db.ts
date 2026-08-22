@@ -9,19 +9,34 @@ export async function createTauriSqlDb(path: string): Promise<Db> {
   const db = await Database.load(path)
 
   const exec = async (sql: string): Promise<void> => {
-    await db.execute(sql)
+    try {
+      await db.execute(sql)
+    } catch (err) {
+      console.error(`[kdb] execute FAILED: ${sql.slice(0, 80)}...`, err)
+      throw err
+    }
   }
 
   const run = async (sql: string, params: unknown[] = []): Promise<ExecResult> => {
-    const result = await db.execute(sql, params as never[])
-    return {
-      rowsAffected: result.rowsAffected,
-      lastInsertId: result.lastInsertId,
+    try {
+      const result = await db.execute(sql, params as never[])
+      return {
+        rowsAffected: result.rowsAffected,
+        lastInsertId: result.lastInsertId,
+      }
+    } catch (err) {
+      console.error(`[kdb] run FAILED: ${sql.slice(0, 80)}...`, err)
+      throw err
     }
   }
 
   const all = async <T>(sql: string, params: unknown[] = []): Promise<T[]> => {
-    return db.select(sql, params as never[]) as Promise<T[]>
+    try {
+      return db.select(sql, params as never[]) as Promise<T[]>
+    } catch (err) {
+      console.error(`[kdb] select FAILED: ${sql.slice(0, 80)}...`, err)
+      throw err
+    }
   }
 
   const get = async <T>(sql: string, params: unknown[] = []): Promise<T | undefined> => {

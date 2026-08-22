@@ -3,11 +3,14 @@ import { MIGRATIONS } from './migrations'
 
 /**
  * Idempotent migration runner. Tracks applied versions in schema_migrations
- * and applies pending ones in version order, each inside a transaction so a
- * failed migration never leaves the DB in a half-migrated state.
+ * and applies pending ones in version order.
  *
  * Multi-statement SQL is split on ';' because tauri-plugin-sql's execute()
  * only runs the first statement per call.
+ *
+ * No explicit transactions — tauri-plugin-sql uses a connection pool, so
+ * raw BEGIN/COMMIT doesn't work across execute() calls. All DDL uses
+ * IF NOT EXISTS so re-runs are safe.
  */
 
 const TABLES_PER_MIGRATION: Record<number, string[]> = {
@@ -52,16 +55,14 @@ export async function migrate(db: Db): Promise<number[]> {
   )
 
   for (const m of pending) {
-    await db.transaction(async () => {
-      const stmts = m.sql
-        .split(';')
-        .map((s) => s.trim())
-        .filter(Boolean)
-      for (const stmt of stmts) {
-        await db.exec(stmt)
-      }
-      await db.run('INSERT INTO schema_migrations (version) VALUES (?)', [m.version])
-    })
+    const stmts = m.sql
+      .split(';')
+      .map((s) => s.trim())
+      .filter(Boolean)
+    for (const stmt of stmts) {
+      await db.exec(stmt)
+    }
+    await db.run('INSERT INTO schema_migrations (version) VALUES (?)', [m.version])
   }
   return pending.map((m) => m.version)
 }
