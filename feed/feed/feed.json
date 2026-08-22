@@ -1,0 +1,2006 @@
+{
+  "items": [
+    {
+      "id": "dkkiex",
+      "title": "How we contain Claude across products",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "How we contain Claude across products",
+      "image_url": null,
+      "published_at": 1779667200000
+    },
+    {
+      "id": "knvpgf",
+      "title": "An update on recent Claude Code quality reports",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "An update on recent Claude Code quality reports",
+      "image_url": null,
+      "published_at": 1776902400000
+    },
+    {
+      "id": "zbjvim",
+      "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+      "url": "https://www.anthropic.com/engineering/managed-agents",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Scaling Managed Agents: Decoupling the brain from the hands",
+      "image_url": null,
+      "published_at": 1775606400000
+    },
+    {
+      "id": "g7206a",
+      "title": "How we built Claude Code auto mode: a safer way to skip permissions",
+      "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "How we built Claude Code auto mode: a safer way to skip permissions",
+      "image_url": null,
+      "published_at": 1774396800000
+    },
+    {
+      "id": "8wkpm9",
+      "title": "Harness design for long-running application development",
+      "url": "https://www.anthropic.com/engineering/harness-design-long-running-apps",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Harness design for long-running application development",
+      "image_url": null,
+      "published_at": 1774310400000
+    },
+    {
+      "id": "skxk5s",
+      "title": "Eval awareness in Claude Opus 4.6’s BrowseComp performance",
+      "url": "https://www.anthropic.com/engineering/eval-awareness-browsecomp",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Eval awareness in Claude Opus 4.6’s BrowseComp performance",
+      "image_url": null,
+      "published_at": 1772755200000
+    },
+    {
+      "id": "cova7k",
+      "title": "Building a C compiler with a team of parallel Claudes",
+      "url": "https://www.anthropic.com/engineering/building-c-compiler",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Building a C compiler with a team of parallel Claudes",
+      "image_url": null,
+      "published_at": 1770249600000
+    },
+    {
+      "id": "l1ka7y",
+      "title": "Quantifying infrastructure noise in agentic coding evals",
+      "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Quantifying infrastructure noise in agentic coding evals",
+      "image_url": null,
+      "published_at": 1770249600000
+    },
+    {
+      "id": "qva6zo",
+      "title": "Designing AI-resistant technical evaluations",
+      "url": "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Designing AI-resistant technical evaluations",
+      "image_url": null,
+      "published_at": 1768953600000
+    },
+    {
+      "id": "1d22mq",
+      "title": "Demystifying evals for AI agents",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Demystifying evals for AI agents",
+      "image_url": null,
+      "published_at": 1767916800000
+    },
+    {
+      "id": "92endu",
+      "title": "Effective harnesses for long-running agents",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Effective harnesses for long-running agents",
+      "image_url": null,
+      "published_at": 1764115200000
+    },
+    {
+      "id": "n45rij",
+      "title": "Introducing advanced tool use on the Claude Developer Platform",
+      "url": "https://www.anthropic.com/engineering/advanced-tool-use",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Introducing advanced tool use on the Claude Developer Platform",
+      "image_url": null,
+      "published_at": 1763942400000
+    },
+    {
+      "id": "4w7bii",
+      "title": "Code execution with MCP: Building more efficient agents",
+      "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Code execution with MCP: Building more efficient agents",
+      "image_url": null,
+      "published_at": 1762214400000
+    },
+    {
+      "id": "c4ik72",
+      "title": "Beyond permission prompts: making Claude Code more secure and autonomous",
+      "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Beyond permission prompts: making Claude Code more secure and autonomous",
+      "image_url": null,
+      "published_at": 1760918400000
+    },
+    {
+      "id": "8azqtl",
+      "title": "Equipping agents for the real world with Agent Skills",
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Equipping agents for the real world with Agent Skills",
+      "image_url": null,
+      "published_at": 1760572800000
+    },
+    {
+      "id": "a4gmrl",
+      "title": "Effective context engineering for AI agents",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Effective context engineering for AI agents",
+      "image_url": null,
+      "published_at": 1759104000000
+    },
+    {
+      "id": "tqey4q",
+      "title": "A postmortem of three recent issues",
+      "url": "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "A postmortem of three recent issues",
+      "image_url": null,
+      "published_at": 1758067200000
+    },
+    {
+      "id": "86yeu1",
+      "title": "Writing effective tools for agents — with agents",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Writing effective tools for agents — with agents",
+      "image_url": null,
+      "published_at": 1757548800000
+    },
+    {
+      "id": "9k9xo7",
+      "title": "Desktop Extensions: One-click MCP server installation for Claude Desktop",
+      "url": "https://www.anthropic.com/engineering/desktop-extensions",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Desktop Extensions: One-click MCP server installation for Claude Desktop",
+      "image_url": null,
+      "published_at": 1750896000000
+    },
+    {
+      "id": "aemsz7",
+      "title": "How we built our multi-agent research system",
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "How we built our multi-agent research system",
+      "image_url": null,
+      "published_at": 1749772800000
+    },
+    {
+      "id": "lz3w2",
+      "title": "Claude Code: Best practices for agentic coding",
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Claude Code: Best practices for agentic coding",
+      "image_url": null,
+      "published_at": 1744934400000
+    },
+    {
+      "id": "cvbonk",
+      "title": "The \\\"think\\\" tool: Enabling Claude to stop and think in complex tool use situations",
+      "url": "https://www.anthropic.com/engineering/claude-think-tool",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "The \\\"think\\\" tool: Enabling Claude to stop and think in complex tool use situations",
+      "image_url": null,
+      "published_at": 1742428800000
+    },
+    {
+      "id": "7fb7hi",
+      "title": "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet",
+      "url": "https://www.anthropic.com/engineering/swe-bench-sonnet",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet",
+      "image_url": null,
+      "published_at": 1736121600000
+    },
+    {
+      "id": "ntc197",
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Building effective agents",
+      "image_url": null,
+      "published_at": 1734566400000
+    },
+    {
+      "id": "p44gay",
+      "title": "Introducing Contextual Retrieval",
+      "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+      "source": "Anthropic Engineering",
+      "category": "wildcard",
+      "summary": "Introducing Contextual Retrieval",
+      "image_url": null,
+      "published_at": 1726704000000
+    },
+    {
+      "id": "w1kkml",
+      "title": "How Claude’s text watermark works",
+      "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "How Claude’s text watermark works",
+      "image_url": null,
+      "published_at": 1786665600000
+    },
+    {
+      "id": "sd0i20",
+      "title": "Improving Fable 5's biology safeguards",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Improving Fable 5's biology safeguards",
+      "image_url": null,
+      "published_at": 1786060800000
+    },
+    {
+      "id": "5fnpe5",
+      "title": "Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer",
+      "url": "https://www.anthropic.com/news/tino-cuellar",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Mariano-Florentino (Tino) Cuéllar to join Anthropic as Chief Global Affairs Officer",
+      "image_url": null,
+      "published_at": 1785801600000
+    },
+    {
+      "id": "u5kvts",
+      "title": "Investigating three real-world incidents in our cybersecurity evaluations",
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Investigating three real-world incidents in our cybersecurity evaluations",
+      "image_url": null,
+      "published_at": 1785369600000
+    },
+    {
+      "id": "9wtskc",
+      "title": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
+      "url": "https://www.anthropic.com/news/cognizant-anthropic",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients",
+      "image_url": null,
+      "published_at": 1785110400000
+    },
+    {
+      "id": "454pi7",
+      "title": "Our position on open-weights models",
+      "url": "https://www.anthropic.com/news/position-open-weights-models",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Our position on open-weights models",
+      "image_url": null,
+      "published_at": 1785110400000
+    },
+    {
+      "id": "74zay8",
+      "title": "Introducing Claude Opus 5",
+      "url": "https://www.anthropic.com/news/claude-opus-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Opus 5",
+      "image_url": null,
+      "published_at": 1784851200000
+    },
+    {
+      "id": "w6o4rl",
+      "title": "Ask Claude about the Anthropic Economic Index",
+      "url": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Ask Claude about the Anthropic Economic Index",
+      "image_url": null,
+      "published_at": 1784678400000
+    },
+    {
+      "id": "hu9bld",
+      "title": "A research agenda for the Economic Futures Research Fund",
+      "url": "https://www.anthropic.com/news/economic-futures-research-fund-agenda",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "A research agenda for the Economic Futures Research Fund",
+      "image_url": null,
+      "published_at": 1784678400000
+    },
+    {
+      "id": "1i3i2q",
+      "title": "Anthropic is donating another $20 million to Public First Action",
+      "url": "https://www.anthropic.com/news/donation-public-first-action",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic is donating another $20 million to Public First Action",
+      "image_url": null,
+      "published_at": 1784592000000
+    },
+    {
+      "id": "f9658t",
+      "title": "Apply for Anthropic’s AI for Science rare disease research grants",
+      "url": "https://www.anthropic.com/news/rare-disease-research-grants",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Apply for Anthropic’s AI for Science rare disease research grants",
+      "image_url": null,
+      "published_at": 1784505600000
+    },
+    {
+      "id": "ogtv9g",
+      "title": "Anthropic commits $10 million to Canadian AI research",
+      "url": "https://www.anthropic.com/news/canadian-ai-research",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic commits $10 million to Canadian AI research",
+      "image_url": null,
+      "published_at": 1783987200000
+    },
+    {
+      "id": "hfd16m",
+      "title": "Introducing Claude for Teachers",
+      "url": "https://www.anthropic.com/news/claude-for-teachers",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude for Teachers",
+      "image_url": null,
+      "published_at": 1783987200000
+    },
+    {
+      "id": "ot84nj",
+      "title": "Introducing a way to reflect on how you use Claude",
+      "url": "https://www.anthropic.com/news/reflect-with-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing a way to reflect on how you use Claude",
+      "image_url": null,
+      "published_at": 1783555200000
+    },
+    {
+      "id": "j0fvpu",
+      "title": "Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust",
+      "url": "https://www.anthropic.com/news/ben-bernanke",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust",
+      "image_url": null,
+      "published_at": 1783555200000
+    },
+    {
+      "id": "z6tehx",
+      "title": "UST is bringing Claude to physical AI",
+      "url": "https://www.anthropic.com/news/ust-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "UST is bringing Claude to physical AI",
+      "image_url": null,
+      "published_at": 1783555200000
+    },
+    {
+      "id": "lt0235",
+      "title": "Inviting hard questions",
+      "url": "https://www.anthropic.com/news/hard-questions",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Inviting hard questions",
+      "image_url": null,
+      "published_at": 1783555200000
+    },
+    {
+      "id": "v6bm84",
+      "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
+      "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
+      "image_url": null,
+      "published_at": 1783296000000
+    },
+    {
+      "id": "bj4h7b",
+      "title": "More details on Fable 5’s cyber safeguards and our jailbreak framework",
+      "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "More details on Fable 5’s cyber safeguards and our jailbreak framework",
+      "image_url": null,
+      "published_at": 1782950400000
+    },
+    {
+      "id": "ouph4k",
+      "title": "Claude Science, an AI workbench for scientists, is now available",
+      "url": "https://www.anthropic.com/news/claude-science-ai-workbench",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude Science, an AI workbench for scientists, is now available",
+      "image_url": null,
+      "published_at": 1782777600000
+    },
+    {
+      "id": "ernqhw",
+      "title": "Introducing Claude Sonnet 5",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Sonnet 5",
+      "image_url": null,
+      "published_at": 1782777600000
+    },
+    {
+      "id": "73udtv",
+      "title": "Redeploying Fable 5",
+      "url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Redeploying Fable 5",
+      "image_url": null,
+      "published_at": 1782777600000
+    },
+    {
+      "id": "ggan6q",
+      "title": "Introducing Claude Tag",
+      "url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Tag",
+      "image_url": null,
+      "published_at": 1782172800000
+    },
+    {
+      "id": "fyupig",
+      "title": "Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem",
+      "url": "https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem",
+      "image_url": null,
+      "published_at": 1781654400000
+    },
+    {
+      "id": "cu8b6c",
+      "title": "TCS and Anthropic partner to bring Claude to regulated industries",
+      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "TCS and Anthropic partner to bring Claude to regulated industries",
+      "image_url": null,
+      "published_at": 1781222400000
+    },
+    {
+      "id": "321jde",
+      "title": "Results from the first Anthropic Public Record",
+      "url": "https://www.anthropic.com/news/anthropic-public-record",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Results from the first Anthropic Public Record",
+      "image_url": null,
+      "published_at": 1781222400000
+    },
+    {
+      "id": "osewbe",
+      "title": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+      "image_url": null,
+      "published_at": 1781222400000
+    },
+    {
+      "id": "xyela8",
+      "title": "Introducing Claude Corps",
+      "url": "https://www.anthropic.com/news/claude-corps",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Corps",
+      "image_url": null,
+      "published_at": 1781136000000
+    },
+    {
+      "id": "lil7q4",
+      "title": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
+      "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "DXC will integrate Claude into the systems banks, airlines, and other regulated industries rely on",
+      "image_url": null,
+      "published_at": 1781136000000
+    },
+    {
+      "id": "ebtx3u",
+      "title": "Claude Fable 5 and Claude Mythos 5",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude Fable 5 and Claude Mythos 5",
+      "image_url": null,
+      "published_at": 1780963200000
+    },
+    {
+      "id": "2jtjh9",
+      "title": "What we learned mapping a year’s worth of AI-enabled cyber threats",
+      "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "What we learned mapping a year’s worth of AI-enabled cyber threats",
+      "image_url": null,
+      "published_at": 1780444800000
+    },
+    {
+      "id": "twz1nf",
+      "title": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
+      "url": "https://www.anthropic.com/news/services-track-partner-hub",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing the Services Track and Partner Hub of the Claude Partner Network",
+      "image_url": null,
+      "published_at": 1780444800000
+    },
+    {
+      "id": "yyr620",
+      "title": "Expanding Project Glasswing",
+      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Expanding Project Glasswing",
+      "image_url": null,
+      "published_at": 1780358400000
+    },
+    {
+      "id": "w3dyer",
+      "title": "Anthropic confidentially submits draft S-1 to the SEC",
+      "url": "https://www.anthropic.com/news/confidential-draft-s1-sec",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic confidentially submits draft S-1 to the SEC",
+      "image_url": null,
+      "published_at": 1780272000000
+    },
+    {
+      "id": "u1i0fu",
+      "title": "Introducing Claude Opus 4.8",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Opus 4.8",
+      "image_url": null,
+      "published_at": 1779926400000
+    },
+    {
+      "id": "w327y0",
+      "title": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "url": "https://www.anthropic.com/news/series-h",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic raises $65B in Series H funding at $965B post-money valuation",
+      "image_url": null,
+      "published_at": 1779926400000
+    },
+    {
+      "id": "q0sn99",
+      "title": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
+      "url": "https://www.anthropic.com/news/milan-office-opening",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic opens Milan office to support Italian enterprise, research, and developers",
+      "image_url": null,
+      "published_at": 1779840000000
+    },
+    {
+      "id": "6nqe9v",
+      "title": "Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening",
+      "url": "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic appoints KiYoung Choi as Representative Director of Korea ahead of Seoul office opening",
+      "image_url": null,
+      "published_at": 1779753600000
+    },
+    {
+      "id": "c7qbm8",
+      "title": "Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical \"Magnifica humanitas\"",
+      "url": "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic co-founder Chris Olah's remarks on Pope Leo XIV's encyclical \"Magnifica humanitas\"",
+      "image_url": null,
+      "published_at": 1779667200000
+    },
+    {
+      "id": "q22my",
+      "title": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
+      "url": "https://www.anthropic.com/news/anthropic-kpmg",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance",
+      "image_url": null,
+      "published_at": 1779148800000
+    },
+    {
+      "id": "rq4bfy",
+      "title": "Widening the conversation on frontier AI",
+      "url": "https://www.anthropic.com/news/widening-conversation-ai",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Widening the conversation on frontier AI",
+      "image_url": null,
+      "published_at": 1779148800000
+    },
+    {
+      "id": "ra9wiz",
+      "title": "Anthropic acquires Stainless",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic acquires Stainless",
+      "image_url": null,
+      "published_at": 1779062400000
+    },
+    {
+      "id": "am7ur9",
+      "title": "Anthropic forms $200 million partnership with the Gates Foundation",
+      "url": "https://www.anthropic.com/news/gates-foundation-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic forms $200 million partnership with the Gates Foundation",
+      "image_url": null,
+      "published_at": 1778716800000
+    },
+    {
+      "id": "qx3zev",
+      "title": "PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients",
+      "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients",
+      "image_url": null,
+      "published_at": 1778716800000
+    },
+    {
+      "id": "q1xlzh",
+      "title": "Introducing Claude for Small Business",
+      "url": "https://www.anthropic.com/news/claude-for-small-business",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude for Small Business",
+      "image_url": null,
+      "published_at": 1778630400000
+    },
+    {
+      "id": "xqvju7",
+      "title": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Higher usage limits for Claude and a compute deal with SpaceX",
+      "image_url": null,
+      "published_at": 1778025600000
+    },
+    {
+      "id": "9ucpvd",
+      "title": "Agents for financial services",
+      "url": "https://www.anthropic.com/news/finance-agents",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Agents for financial services",
+      "image_url": null,
+      "published_at": 1777939200000
+    },
+    {
+      "id": "94p2ur",
+      "title": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
+      "url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs",
+      "image_url": null,
+      "published_at": 1777852800000
+    },
+    {
+      "id": "m24yea",
+      "title": "Claude for Creative Work",
+      "url": "https://www.anthropic.com/news/claude-for-creative-work",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude for Creative Work",
+      "image_url": null,
+      "published_at": 1777334400000
+    },
+    {
+      "id": "wje3g3",
+      "title": "Anthropic names Theo Hourmouzis General Manager of Australia & New Zealand and officially opens Sydney office",
+      "url": "https://www.anthropic.com/news/theo-hourmouzis-general-manager-australia-new-zealand",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic names Theo Hourmouzis General Manager of Australia & New Zealand and officially opens Sydney office",
+      "image_url": null,
+      "published_at": 1777248000000
+    },
+    {
+      "id": "kn85ob",
+      "title": "Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce",
+      "url": "https://www.anthropic.com/news/anthropic-nec",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and NEC collaborate to build Japan’s largest AI engineering workforce",
+      "image_url": null,
+      "published_at": 1776988800000
+    },
+    {
+      "id": "fdwknh",
+      "title": "An update on our election safeguards",
+      "url": "https://www.anthropic.com/news/election-safeguards-update",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "An update on our election safeguards",
+      "image_url": null,
+      "published_at": 1776988800000
+    },
+    {
+      "id": "b3hk45",
+      "title": "Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute",
+      "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute",
+      "image_url": null,
+      "published_at": 1776643200000
+    },
+    {
+      "id": "ehb2xf",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Design by Anthropic Labs",
+      "image_url": null,
+      "published_at": 1776384000000
+    },
+    {
+      "id": "u1i0ft",
+      "title": "Introducing Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Opus 4.7",
+      "image_url": null,
+      "published_at": 1776297600000
+    },
+    {
+      "id": "84xbsv",
+      "title": "Anthropic’s Long-Term Benefit Trust appoints Vas Narasimhan to Board of Directors",
+      "url": "https://www.anthropic.com/news/narasimhan-board",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic’s Long-Term Benefit Trust appoints Vas Narasimhan to Board of Directors",
+      "image_url": null,
+      "published_at": 1776124800000
+    },
+    {
+      "id": "gjmuq",
+      "title": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute",
+      "image_url": null,
+      "published_at": 1775433600000
+    },
+    {
+      "id": "jyybb4",
+      "title": "Australian government and Anthropic sign MOU for AI safety and research",
+      "url": "https://www.anthropic.com/news/australia-MOU",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Australian government and Anthropic sign MOU for AI safety and research",
+      "image_url": null,
+      "published_at": 1774915200000
+    },
+    {
+      "id": "72xx0g",
+      "title": "Anthropic invests $100 million into the Claude Partner Network",
+      "url": "https://www.anthropic.com/news/claude-partner-network",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic invests $100 million into the Claude Partner Network",
+      "image_url": null,
+      "published_at": 1773273600000
+    },
+    {
+      "id": "me6hji",
+      "title": "Introducing The Anthropic Institute",
+      "url": "https://www.anthropic.com/news/the-anthropic-institute",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing The Anthropic Institute",
+      "image_url": null,
+      "published_at": 1773187200000
+    },
+    {
+      "id": "dbq5rb",
+      "title": "Sydney will become Anthropic’s fourth office in Asia-Pacific",
+      "url": "https://www.anthropic.com/news/sydney-fourth-office-asia-pacific",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Sydney will become Anthropic’s fourth office in Asia-Pacific",
+      "image_url": null,
+      "published_at": 1773100800000
+    },
+    {
+      "id": "8dpasp",
+      "title": "Partnering with Mozilla to improve Firefox’s security",
+      "url": "https://www.anthropic.com/news/mozilla-firefox-security",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Partnering with Mozilla to improve Firefox’s security",
+      "image_url": null,
+      "published_at": 1772755200000
+    },
+    {
+      "id": "mgcnlc",
+      "title": "Where things stand with the Department of War",
+      "url": "https://www.anthropic.com/news/where-stand-department-war",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Where things stand with the Department of War",
+      "image_url": null,
+      "published_at": 1772668800000
+    },
+    {
+      "id": "hp0132",
+      "title": "Statement on the comments from Secretary of War Pete Hegseth",
+      "url": "https://www.anthropic.com/news/statement-comments-secretary-war",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Statement on the comments from Secretary of War Pete Hegseth",
+      "image_url": null,
+      "published_at": 1772150400000
+    },
+    {
+      "id": "rh1t6f",
+      "title": "Statement from Dario Amodei on our discussions with the Department of War",
+      "url": "https://www.anthropic.com/news/statement-department-of-war",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Statement from Dario Amodei on our discussions with the Department of War",
+      "image_url": null,
+      "published_at": 1772064000000
+    },
+    {
+      "id": "kcxc8x",
+      "title": "Anthropic acquires Vercept to advance Claude's computer use capabilities",
+      "url": "https://www.anthropic.com/news/acquires-vercept",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic acquires Vercept to advance Claude's computer use capabilities",
+      "image_url": null,
+      "published_at": 1771977600000
+    },
+    {
+      "id": "qgciph",
+      "title": "Anthropic’s Responsible Scaling Policy: Version 3.0",
+      "url": "https://www.anthropic.com/news/responsible-scaling-policy-v3",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic’s Responsible Scaling Policy: Version 3.0",
+      "image_url": null,
+      "published_at": 1771891200000
+    },
+    {
+      "id": "cxhl2v",
+      "title": "Detecting and preventing distillation attacks",
+      "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Detecting and preventing distillation attacks",
+      "image_url": null,
+      "published_at": 1771804800000
+    },
+    {
+      "id": "z5ook7",
+      "title": "Making frontier cybersecurity capabilities available to defenders",
+      "url": "https://www.anthropic.com/news/claude-code-security",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Making frontier cybersecurity capabilities available to defenders",
+      "image_url": null,
+      "published_at": 1771545600000
+    },
+    {
+      "id": "dylwo",
+      "title": "Anthropic and Infosys collaborate to build AI agents for telecommunications and other regulated industries",
+      "url": "https://www.anthropic.com/news/anthropic-infosys",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and Infosys collaborate to build AI agents for telecommunications and other regulated industries",
+      "image_url": null,
+      "published_at": 1771286400000
+    },
+    {
+      "id": "dtwnwk",
+      "title": "Introducing Claude Sonnet 4.6",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-6",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Sonnet 4.6",
+      "image_url": null,
+      "published_at": 1771286400000
+    },
+    {
+      "id": "dr215w",
+      "title": "Anthropic and the Government of Rwanda sign MOU for AI in health and education",
+      "url": "https://www.anthropic.com/news/anthropic-rwanda-mou",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and the Government of Rwanda sign MOU for AI in health and education",
+      "image_url": null,
+      "published_at": 1771286400000
+    },
+    {
+      "id": "p0kq9k",
+      "title": "Anthropic opens Bengaluru office and announces new partnerships across India",
+      "url": "https://www.anthropic.com/news/bengaluru-office-partnerships-across-india",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic opens Bengaluru office and announces new partnerships across India",
+      "image_url": null,
+      "published_at": 1771200000000
+    },
+    {
+      "id": "pmd8vr",
+      "title": "Chris Liddell appointed to Anthropic’s board of directors",
+      "url": "https://www.anthropic.com/news/chris-liddell-appointed-anthropic-board",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Chris Liddell appointed to Anthropic’s board of directors",
+      "image_url": null,
+      "published_at": 1770940800000
+    },
+    {
+      "id": "an4mkw",
+      "title": "Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program",
+      "url": "https://www.anthropic.com/news/anthropic-codepath-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic partners with CodePath to bring Claude to the US’s largest collegiate computer science program",
+      "image_url": null,
+      "published_at": 1770940800000
+    },
+    {
+      "id": "gwxxi9",
+      "title": "Anthropic is donating $20 million to Public First Action",
+      "url": "https://www.anthropic.com/news/donate-public-first-action",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic is donating $20 million to Public First Action",
+      "image_url": null,
+      "published_at": 1770854400000
+    },
+    {
+      "id": "u5sos",
+      "title": "Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation",
+      "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation",
+      "image_url": null,
+      "published_at": 1770854400000
+    },
+    {
+      "id": "3aerp1",
+      "title": "Covering electricity price increases from our data centers",
+      "url": "https://www.anthropic.com/news/covering-electricity-price-increases",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Covering electricity price increases from our data centers",
+      "image_url": null,
+      "published_at": 1770768000000
+    },
+    {
+      "id": "u1i0fs",
+      "title": "Introducing Claude Opus 4.6",
+      "url": "https://www.anthropic.com/news/claude-opus-4-6",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Opus 4.6",
+      "image_url": null,
+      "published_at": 1770249600000
+    },
+    {
+      "id": "uqxsfh",
+      "title": "Claude is a space to think",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude is a space to think",
+      "image_url": null,
+      "published_at": 1770163200000
+    },
+    {
+      "id": "td65ic",
+      "title": "Apple’s Xcode now supports the Claude Agent SDK",
+      "url": "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Apple’s Xcode now supports the Claude Agent SDK",
+      "image_url": null,
+      "published_at": 1770076800000
+    },
+    {
+      "id": "w1yh91",
+      "title": "Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery",
+      "url": "https://www.anthropic.com/news/anthropic-partners-with-allen-institute-and-howard-hughes-medical-institute",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic partners with Allen Institute and Howard Hughes Medical Institute to accelerate scientific discovery",
+      "image_url": null,
+      "published_at": 1769990400000
+    },
+    {
+      "id": "tzikxn",
+      "title": "ServiceNow chooses Claude to power customer apps and increase internal productivity",
+      "url": "https://www.anthropic.com/news/servicenow-anthropic-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "ServiceNow chooses Claude to power customer apps and increase internal productivity",
+      "image_url": null,
+      "published_at": 1769558400000
+    },
+    {
+      "id": "hmohzm",
+      "title": "Anthropic partners with the UK Government to bring AI assistance to GOV.UK services",
+      "url": "https://www.anthropic.com/news/gov-UK-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic partners with the UK Government to bring AI assistance to GOV.UK services",
+      "image_url": null,
+      "published_at": 1769472000000
+    },
+    {
+      "id": "k68woh",
+      "title": "Claude's new constitution",
+      "url": "https://www.anthropic.com/news/claude-new-constitution",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude's new constitution",
+      "image_url": null,
+      "published_at": 1769040000000
+    },
+    {
+      "id": "lhmabi",
+      "title": "Anthropic and Teach For All launch global AI training initiative for educators",
+      "url": "https://www.anthropic.com/news/anthropic-teach-for-all",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and Teach For All launch global AI training initiative for educators",
+      "image_url": null,
+      "published_at": 1768953600000
+    },
+    {
+      "id": "mi5six",
+      "title": "Mariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust",
+      "url": "https://www.anthropic.com/news/mariano-florentino-long-term-benefit-trust",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Mariano-Florentino Cuéllar appointed to Anthropic’s Long-Term Benefit Trust",
+      "image_url": null,
+      "published_at": 1768953600000
+    },
+    {
+      "id": "rsq9t5",
+      "title": "Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening",
+      "url": "https://www.anthropic.com/news/anthropic-appoints-irina-ghose-as-managing-director-of-india",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic appoints Irina Ghose as Managing Director of India ahead of Bengaluru office opening",
+      "image_url": null,
+      "published_at": 1768521600000
+    },
+    {
+      "id": "gobpxq",
+      "title": "How scientists are using Claude to accelerate research and discovery",
+      "url": "https://www.anthropic.com/news/accelerating-scientific-research",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "How scientists are using Claude to accelerate research and discovery",
+      "image_url": null,
+      "published_at": 1768435200000
+    },
+    {
+      "id": "nvv83i",
+      "title": "Introducing Labs",
+      "url": "https://www.anthropic.com/news/introducing-anthropic-labs",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Labs",
+      "image_url": null,
+      "published_at": 1768262400000
+    },
+    {
+      "id": "cr1e6e",
+      "title": "Advancing Claude in healthcare and the life sciences",
+      "url": "https://www.anthropic.com/news/healthcare-life-sciences",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Advancing Claude in healthcare and the life sciences",
+      "image_url": null,
+      "published_at": 1768089600000
+    },
+    {
+      "id": "nepgbc",
+      "title": "Sharing our compliance framework for California's Transparency in Frontier AI Act",
+      "url": "https://www.anthropic.com/news/compliance-framework-SB53",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Sharing our compliance framework for California's Transparency in Frontier AI Act",
+      "image_url": null,
+      "published_at": 1766102400000
+    },
+    {
+      "id": "grgbij",
+      "title": "Protecting the wellbeing of our users",
+      "url": "https://www.anthropic.com/news/protecting-well-being-of-users",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Protecting the wellbeing of our users",
+      "image_url": null,
+      "published_at": 1766016000000
+    },
+    {
+      "id": "hjo1u0",
+      "title": "Working with the US Department of Energy to unlock the next era of scientific discovery",
+      "url": "https://www.anthropic.com/news/genesis-mission-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Working with the US Department of Energy to unlock the next era of scientific discovery",
+      "image_url": null,
+      "published_at": 1766016000000
+    },
+    {
+      "id": "swe7w2",
+      "title": "Accenture and Anthropic launch multi-year partnership to move enterprises from AI pilots to production",
+      "url": "https://www.anthropic.com/news/anthropic-accenture-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Accenture and Anthropic launch multi-year partnership to move enterprises from AI pilots to production",
+      "image_url": null,
+      "published_at": 1765238400000
+    },
+    {
+      "id": "tta01i",
+      "title": "Donating the Model Context Protocol and establishing the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Donating the Model Context Protocol and establishing the Agentic AI Foundation",
+      "image_url": null,
+      "published_at": 1765238400000
+    },
+    {
+      "id": "utaa8z",
+      "title": "Anthropic acquires Bun as Claude Code reaches $1B milestone",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic acquires Bun as Claude Code reaches $1B milestone",
+      "image_url": null,
+      "published_at": 1764720000000
+    },
+    {
+      "id": "ne500e",
+      "title": "Snowflake and Anthropic announce $200 million partnership to bring agentic AI to global enterprises",
+      "url": "https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Snowflake and Anthropic announce $200 million partnership to bring agentic AI to global enterprises",
+      "image_url": null,
+      "published_at": 1764720000000
+    },
+    {
+      "id": "9d8rkh",
+      "title": "Claude for Nonprofits",
+      "url": "https://www.anthropic.com/news/claude-for-nonprofits",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude for Nonprofits",
+      "image_url": null,
+      "published_at": 1764633600000
+    },
+    {
+      "id": "u1i0fr",
+      "title": "Introducing Claude Opus 4.5",
+      "url": "https://www.anthropic.com/news/claude-opus-4-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Opus 4.5",
+      "image_url": null,
+      "published_at": 1763942400000
+    },
+    {
+      "id": "yy5d84",
+      "title": "Anthropic partners with Rwandan Government and ALX to bring AI education to hundreds of thousands of learners across Africa",
+      "url": "https://www.anthropic.com/news/rwandan-government-partnership-ai-education",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic partners with Rwandan Government and ALX to bring AI education to hundreds of thousands of learners across Africa",
+      "image_url": null,
+      "published_at": 1763424000000
+    },
+    {
+      "id": "u51ufm",
+      "title": "Microsoft, NVIDIA, and Anthropic announce strategic partnerships",
+      "url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Microsoft, NVIDIA, and Anthropic announce strategic partnerships",
+      "image_url": null,
+      "published_at": 1763424000000
+    },
+    {
+      "id": "75w95h",
+      "title": "Claude now available in Microsoft Foundry and Microsoft 365 Copilot",
+      "url": "https://www.anthropic.com/news/claude-in-microsoft-foundry",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude now available in Microsoft Foundry and Microsoft 365 Copilot",
+      "image_url": null,
+      "published_at": 1763424000000
+    },
+    {
+      "id": "w2nzzy",
+      "title": "Measuring political bias in Claude",
+      "url": "https://www.anthropic.com/news/political-even-handedness",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Measuring political bias in Claude",
+      "image_url": null,
+      "published_at": 1762992000000
+    },
+    {
+      "id": "pxg6qr",
+      "title": "The state of Maryland partners with Anthropic to better serve residents",
+      "url": "https://www.anthropic.com/news/maryland-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "The state of Maryland partners with Anthropic to better serve residents",
+      "image_url": null,
+      "published_at": 1762992000000
+    },
+    {
+      "id": "rci7m",
+      "title": "Disrupting the first reported AI-orchestrated cyber espionage campaign",
+      "url": "https://www.anthropic.com/news/disrupting-AI-espionage",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Disrupting the first reported AI-orchestrated cyber espionage campaign",
+      "image_url": null,
+      "published_at": 1762992000000
+    },
+    {
+      "id": "7ri5tn",
+      "title": "Anthropic invests $50 billion in American AI infrastructure",
+      "url": "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic invests $50 billion in American AI infrastructure",
+      "image_url": null,
+      "published_at": 1762905600000
+    },
+    {
+      "id": "4yq2jw",
+      "title": "New offices in Paris and Munich expand Anthropic’s European presence",
+      "url": "https://www.anthropic.com/news/new-offices-in-paris-and-munich-expand-european-presence",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "New offices in Paris and Munich expand Anthropic’s European presence",
+      "image_url": null,
+      "published_at": 1762473600000
+    },
+    {
+      "id": "oul822",
+      "title": "Launching the Anthropic Economic Futures Programme in the UK and Europe",
+      "url": "https://www.anthropic.com/news/economic-futures-uk-europe",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Launching the Anthropic Economic Futures Programme in the UK and Europe",
+      "image_url": null,
+      "published_at": 1762300800000
+    },
+    {
+      "id": "gxer1w",
+      "title": "Cognizant will make Claude available to 350,000 employees, accelerating enterprise AI adoption and internal transformation",
+      "url": "https://www.anthropic.com/news/cognizant-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Cognizant will make Claude available to 350,000 employees, accelerating enterprise AI adoption and internal transformation",
+      "image_url": null,
+      "published_at": 1762214400000
+    },
+    {
+      "id": "7utbr",
+      "title": "Anthropic and Iceland announce one of the world’s first national AI education pilots",
+      "url": "https://www.anthropic.com/news/anthropic-and-iceland-announce-one-of-the-world-s-first-national-ai-education-pilots",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and Iceland announce one of the world’s first national AI education pilots",
+      "image_url": null,
+      "published_at": 1762214400000
+    },
+    {
+      "id": "iyhe75",
+      "title": "Anthropic officially opens Tokyo office, signs Memorandum of Cooperation with the Japan AI Safety Institute",
+      "url": "https://www.anthropic.com/news/opening-our-tokyo-office",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic officially opens Tokyo office, signs Memorandum of Cooperation with the Japan AI Safety Institute",
+      "image_url": null,
+      "published_at": 1761696000000
+    },
+    {
+      "id": "yheibl",
+      "title": "Advancing Claude for Financial Services",
+      "url": "https://www.anthropic.com/news/advancing-claude-for-financial-services",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Advancing Claude for Financial Services",
+      "image_url": null,
+      "published_at": 1761523200000
+    },
+    {
+      "id": "oa7ep",
+      "title": "Expanding our use of Google Cloud TPUs and Services",
+      "url": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Expanding our use of Google Cloud TPUs and Services",
+      "image_url": null,
+      "published_at": 1761177600000
+    },
+    {
+      "id": "gc3ugs",
+      "title": "Seoul becomes Anthropic’s third office in Asia-Pacific as we continue our international growth",
+      "url": "https://www.anthropic.com/news/seoul-becomes-third-anthropic-office-in-asia-pacific",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Seoul becomes Anthropic’s third office in Asia-Pacific as we continue our international growth",
+      "image_url": null,
+      "published_at": 1761177600000
+    },
+    {
+      "id": "86k781",
+      "title": "A statement from Dario Amodei on Anthropic's commitment to American AI leadership",
+      "url": "https://www.anthropic.com/news/statement-dario-amodei-american-ai-leadership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "A statement from Dario Amodei on Anthropic's commitment to American AI leadership",
+      "image_url": null,
+      "published_at": 1761004800000
+    },
+    {
+      "id": "90dk3x",
+      "title": "Claude for Life Sciences",
+      "url": "https://www.anthropic.com/news/claude-for-life-sciences",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude for Life Sciences",
+      "image_url": null,
+      "published_at": 1760918400000
+    },
+    {
+      "id": "tqnl7c",
+      "title": "Introducing Agent Skills",
+      "url": "https://www.anthropic.com/news/skills",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Agent Skills",
+      "image_url": null,
+      "published_at": 1760572800000
+    },
+    {
+      "id": "w5hidc",
+      "title": "Introducing Claude Haiku 4.5",
+      "url": "https://www.anthropic.com/news/claude-haiku-4-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Haiku 4.5",
+      "image_url": null,
+      "published_at": 1760486400000
+    },
+    {
+      "id": "8gxtaf",
+      "title": "Anthropic and Salesforce expand partnership to bring Claude to regulated industries",
+      "url": "https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and Salesforce expand partnership to bring Claude to regulated industries",
+      "image_url": null,
+      "published_at": 1760400000000
+    },
+    {
+      "id": "n9a1pe",
+      "title": "Rahul Patil joins Anthropic as Chief Technology Officer",
+      "url": "https://www.anthropic.com/news/rahul-patil-joins-anthropic",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Rahul Patil joins Anthropic as Chief Technology Officer",
+      "image_url": null,
+      "published_at": 1759795200000
+    },
+    {
+      "id": "a9z3ev",
+      "title": "Expanding our global operations to India with our second Asia Pacific office",
+      "url": "https://www.anthropic.com/news/expanding-global-operations-to-india",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Expanding our global operations to India with our second Asia Pacific office",
+      "image_url": null,
+      "published_at": 1759795200000
+    },
+    {
+      "id": "5x6bmk",
+      "title": "Deloitte will make Claude available to 470,000 people across its global network",
+      "url": "https://www.anthropic.com/news/deloitte-anthropic-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Deloitte will make Claude available to 470,000 people across its global network",
+      "image_url": null,
+      "published_at": 1759708800000
+    },
+    {
+      "id": "dtwnwj",
+      "title": "Introducing Claude Sonnet 4.5",
+      "url": "https://www.anthropic.com/news/claude-sonnet-4-5",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude Sonnet 4.5",
+      "image_url": null,
+      "published_at": 1759104000000
+    },
+    {
+      "id": "54ebfx",
+      "title": "Enabling Claude Code to work more autonomously",
+      "url": "https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Enabling Claude Code to work more autonomously",
+      "image_url": null,
+      "published_at": 1759104000000
+    },
+    {
+      "id": "u287i7",
+      "title": "Anthropic expands global leadership in enterprise AI, naming Chris Ciauri as Managing Director of International",
+      "url": "https://www.anthropic.com/news/anthropic-expands-global-leadership-in-enterprise-ai-naming-chris-ciauri-as-managing-director-of",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic expands global leadership in enterprise AI, naming Chris Ciauri as Managing Director of International",
+      "image_url": null,
+      "published_at": 1758844800000
+    },
+    {
+      "id": "6usoiu",
+      "title": "Claude is now generally available in Xcode",
+      "url": "https://www.anthropic.com/news/claude-in-xcode",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude is now generally available in Xcode",
+      "image_url": null,
+      "published_at": 1757894400000
+    },
+    {
+      "id": "bdhq2j",
+      "title": "Strengthening our safeguards through collaboration with US CAISI and UK AISI",
+      "url": "https://www.anthropic.com/news/strengthening-our-safeguards-through-collaboration-with-us-caisi-and-uk-aisi",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Strengthening our safeguards through collaboration with US CAISI and UK AISI",
+      "image_url": null,
+      "published_at": 1757635200000
+    },
+    {
+      "id": "gngu74",
+      "title": "Anthropic is endorsing SB 53",
+      "url": "https://www.anthropic.com/news/anthropic-is-endorsing-sb-53",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic is endorsing SB 53",
+      "image_url": null,
+      "published_at": 1757289600000
+    },
+    {
+      "id": "2yi7id",
+      "title": "Anthropic Signs White House Pledge to America's Youth: Investing in AI Education",
+      "url": "https://www.anthropic.com/news/anthropic-signs-pledge-to-americas-youth-investing-in-ai-education",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic Signs White House Pledge to America's Youth: Investing in AI Education",
+      "image_url": null,
+      "published_at": 1756944000000
+    },
+    {
+      "id": "w575fr",
+      "title": "Updating restrictions of sales to unsupported regions",
+      "url": "https://www.anthropic.com/news/updating-restrictions-of-sales-to-unsupported-regions",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Updating restrictions of sales to unsupported regions",
+      "image_url": null,
+      "published_at": 1756944000000
+    },
+    {
+      "id": "kpzncc",
+      "title": "Anthropic raises $13B Series F at $183B post-money valuation",
+      "url": "https://www.anthropic.com/news/anthropic-raises-series-f-at-usd183b-post-money-valuation",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic raises $13B Series F at $183B post-money valuation",
+      "image_url": null,
+      "published_at": 1756771200000
+    },
+    {
+      "id": "e19wxm",
+      "title": "Updates to Consumer Terms and Privacy Policy",
+      "url": "https://www.anthropic.com/news/updates-to-our-consumer-terms",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Updates to Consumer Terms and Privacy Policy",
+      "image_url": null,
+      "published_at": 1756339200000
+    },
+    {
+      "id": "489nzf",
+      "title": "Anthropic Education Report: How educators use Claude",
+      "url": "https://www.anthropic.com/news/anthropic-education-report-how-educators-use-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic Education Report: How educators use Claude",
+      "image_url": null,
+      "published_at": 1756252800000
+    },
+    {
+      "id": "vwxyj0",
+      "title": "Introducing the Anthropic National Security and Public Sector Advisory Council",
+      "url": "https://www.anthropic.com/news/introducing-the-anthropic-national-security-and-public-sector-advisory-council",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing the Anthropic National Security and Public Sector Advisory Council",
+      "image_url": null,
+      "published_at": 1756252800000
+    },
+    {
+      "id": "oajllx",
+      "title": "Detecting and countering misuse of AI: August 2025",
+      "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Detecting and countering misuse of AI: August 2025",
+      "image_url": null,
+      "published_at": 1756252800000
+    },
+    {
+      "id": "kukq96",
+      "title": "Developing nuclear safeguards for AI through public-private partnership",
+      "url": "https://www.anthropic.com/news/developing-nuclear-safeguards-for-ai-through-public-private-partnership",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Developing nuclear safeguards for AI through public-private partnership",
+      "image_url": null,
+      "published_at": 1755734400000
+    },
+    {
+      "id": "o98xm3",
+      "title": "Anthropic launches higher education advisory board and AI Fluency courses",
+      "url": "https://www.anthropic.com/news/anthropic-higher-education-initiatives",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic launches higher education advisory board and AI Fluency courses",
+      "image_url": null,
+      "published_at": 1755734400000
+    },
+    {
+      "id": "wgz0j4",
+      "title": "Claude Code and new admin controls for business plans",
+      "url": "https://www.anthropic.com/news/claude-code-on-team-and-enterprise",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude Code and new admin controls for business plans",
+      "image_url": null,
+      "published_at": 1755648000000
+    },
+    {
+      "id": "5wjexa",
+      "title": "Usage policy update",
+      "url": "https://www.anthropic.com/news/usage-policy-update",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Usage policy update",
+      "image_url": null,
+      "published_at": 1755216000000
+    },
+    {
+      "id": "idj30a",
+      "title": "Offering expanded Claude access across all three branches of the U.S. government",
+      "url": "https://www.anthropic.com/news/offering-expanded-claude-access-across-all-three-branches-of-government",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Offering expanded Claude access across all three branches of the U.S. government",
+      "image_url": null,
+      "published_at": 1754956800000
+    },
+    {
+      "id": "2iiczl",
+      "title": "Building safeguards for Claude",
+      "url": "https://www.anthropic.com/news/building-safeguards-for-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Building safeguards for Claude",
+      "image_url": null,
+      "published_at": 1754956800000
+    },
+    {
+      "id": "gnpau4",
+      "title": "Anthropic appoints Hidetoshi Tojo as Head of Japan and announces hiring plans",
+      "url": "https://www.anthropic.com/news/head-of-japan-hiring-plans",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic appoints Hidetoshi Tojo as Head of Japan and announces hiring plans",
+      "image_url": null,
+      "published_at": 1754438400000
+    },
+    {
+      "id": "w2ndl8",
+      "title": "Federal government departments and agencies can now purchase Claude through the GSA schedule",
+      "url": "https://www.anthropic.com/news/federal-government-departments-and-agencies-can-now-purchase-claude-through-the-gsa-schedule",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Federal government departments and agencies can now purchase Claude through the GSA schedule",
+      "image_url": null,
+      "published_at": 1754352000000
+    },
+    {
+      "id": "u1i0fn",
+      "title": "Claude Opus 4.1",
+      "url": "https://www.anthropic.com/news/claude-opus-4-1",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude Opus 4.1",
+      "image_url": null,
+      "published_at": 1754352000000
+    },
+    {
+      "id": "8j8ckg",
+      "title": "Our framework for developing safe and trustworthy agents",
+      "url": "https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Our framework for developing safe and trustworthy agents",
+      "image_url": null,
+      "published_at": 1754265600000
+    },
+    {
+      "id": "kathnm",
+      "title": "Anthropic Signs CMS Health Tech Ecosystem Pledge to Advance Healthcare Interoperability",
+      "url": "https://www.anthropic.com/news/anthropic-signs-cms-health-tech-ecosystem-pledge-to-advance-healthcare-interoperability",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic Signs CMS Health Tech Ecosystem Pledge to Advance Healthcare Interoperability",
+      "image_url": null,
+      "published_at": 1753833600000
+    },
+    {
+      "id": "x797ba",
+      "title": "Anthropic partners with the University of Chicago’s Becker Friedman Institute on AI economic research",
+      "url": "https://www.anthropic.com/news/anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-on-ai-economic",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic partners with the University of Chicago’s Becker Friedman Institute on AI economic research",
+      "image_url": null,
+      "published_at": 1753228800000
+    },
+    {
+      "id": "k6rpor",
+      "title": "Thoughts on America’s AI Action Plan",
+      "url": "https://www.anthropic.com/news/thoughts-on-america-s-ai-action-plan",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Thoughts on America’s AI Action Plan",
+      "image_url": null,
+      "published_at": 1753228800000
+    },
+    {
+      "id": "r88sgs",
+      "title": "Anthropic to sign the EU Code of Practice",
+      "url": "https://www.anthropic.com/news/eu-code-practice",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic to sign the EU Code of Practice",
+      "image_url": null,
+      "published_at": 1753056000000
+    },
+    {
+      "id": "dbnqqu",
+      "title": "Build AI in America",
+      "url": "https://www.anthropic.com/news/build-ai-in-america",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Build AI in America",
+      "image_url": null,
+      "published_at": 1753056000000
+    },
+    {
+      "id": "cfqm1k",
+      "title": "Investing in energy to secure America's AI future",
+      "url": "https://www.anthropic.com/news/investing-in-energy-to-secure-america-s-ai-future",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Investing in energy to secure America's AI future",
+      "image_url": null,
+      "published_at": 1752537600000
+    },
+    {
+      "id": "ra9odt",
+      "title": "Claude for Financial Services",
+      "url": "https://www.anthropic.com/news/claude-for-financial-services",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude for Financial Services",
+      "image_url": null,
+      "published_at": 1752537600000
+    },
+    {
+      "id": "5vazci",
+      "title": "Paul Smith to join Anthropic as Chief Commercial Officer",
+      "url": "https://www.anthropic.com/news/paul-smith-to-join-anthropic",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Paul Smith to join Anthropic as Chief Commercial Officer",
+      "image_url": null,
+      "published_at": 1752537600000
+    },
+    {
+      "id": "j0lfap",
+      "title": "Anthropic and the Department of Defense to advance responsible AI in defense operations",
+      "url": "https://www.anthropic.com/news/anthropic-and-the-department-of-defense-to-advance-responsible-ai-in-defense-operations",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic and the Department of Defense to advance responsible AI in defense operations",
+      "image_url": null,
+      "published_at": 1752451200000
+    },
+    {
+      "id": "70qfcz",
+      "title": "Lawrence Livermore National Laboratory expands Claude for Enterprise use to empower scientists and researchers",
+      "url": "https://www.anthropic.com/news/lawrence-livermore-national-laboratory-expands-claude-for-enterprise-to-empower-scientists-and",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Lawrence Livermore National Laboratory expands Claude for Enterprise use to empower scientists and researchers",
+      "image_url": null,
+      "published_at": 1752019200000
+    },
+    {
+      "id": "ufgqxj",
+      "title": "Advancing Claude for Education",
+      "url": "https://www.anthropic.com/news/advancing-claude-for-education",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Advancing Claude for Education",
+      "image_url": null,
+      "published_at": 1752019200000
+    },
+    {
+      "id": "onbbw",
+      "title": "The need for transparency in Frontier AI",
+      "url": "https://www.anthropic.com/news/the-need-for-transparency-in-frontier-ai",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "The need for transparency in Frontier AI",
+      "image_url": null,
+      "published_at": 1751846400000
+    },
+    {
+      "id": "xx7mk3",
+      "title": "How people use Claude for support, advice, and companionship",
+      "url": "https://www.anthropic.com/news/how-people-use-claude-for-support-advice-and-companionship",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "How people use Claude for support, advice, and companionship",
+      "image_url": null,
+      "published_at": 1750982400000
+    },
+    {
+      "id": "834t4z",
+      "title": "Introducing the Anthropic Economic Futures Program",
+      "url": "https://www.anthropic.com/news/introducing-the-anthropic-economic-futures-program",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing the Anthropic Economic Futures Program",
+      "image_url": null,
+      "published_at": 1750982400000
+    },
+    {
+      "id": "u8swjt",
+      "title": "Claude in Amazon Bedrock: Approved for use in FedRAMP High and DoD IL4/5 workloads",
+      "url": "https://www.anthropic.com/news/claude-in-amazon-bedrock-fedramp-high",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude in Amazon Bedrock: Approved for use in FedRAMP High and DoD IL4/5 workloads",
+      "image_url": null,
+      "published_at": 1749600000000
+    },
+    {
+      "id": "ev2yj4",
+      "title": "National security expert Richard Fontaine appointed to Anthropic’s long-term benefit trust",
+      "url": "https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "National security expert Richard Fontaine appointed to Anthropic’s long-term benefit trust",
+      "image_url": null,
+      "published_at": 1749254400000
+    },
+    {
+      "id": "l7hzua",
+      "title": "Claude Gov models for U.S. national security customers",
+      "url": "https://www.anthropic.com/news/claude-gov-models-for-u-s-national-security-customers",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Claude Gov models for U.S. national security customers",
+      "image_url": null,
+      "published_at": 1749168000000
+    },
+    {
+      "id": "6skh0g",
+      "title": "Reed Hastings appointed to Anthropic’s board of directors",
+      "url": "https://www.anthropic.com/news/reed-hastings",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Reed Hastings appointed to Anthropic’s board of directors",
+      "image_url": null,
+      "published_at": 1748390400000
+    },
+    {
+      "id": "ky7xez",
+      "title": "Introducing Claude 4",
+      "url": "https://www.anthropic.com/news/claude-4",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Claude 4",
+      "image_url": null,
+      "published_at": 1747872000000
+    },
+    {
+      "id": "ko8j0d",
+      "title": "Activating AI Safety Level 3 protections",
+      "url": "https://www.anthropic.com/news/activating-asl3-protections",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Activating AI Safety Level 3 protections",
+      "image_url": null,
+      "published_at": 1747872000000
+    },
+    {
+      "id": "y99gig",
+      "title": "Testing our safety defenses with a new bug bounty program",
+      "url": "https://www.anthropic.com/news/testing-our-safety-defenses-with-a-new-bug-bounty-program",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Testing our safety defenses with a new bug bounty program",
+      "image_url": null,
+      "published_at": 1747180800000
+    },
+    {
+      "id": "d7fbtk",
+      "title": "Introducing Anthropic's AI for Science Program",
+      "url": "https://www.anthropic.com/news/ai-for-science-program",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Anthropic's AI for Science Program",
+      "image_url": null,
+      "published_at": 1746403200000
+    },
+    {
+      "id": "47w1qh",
+      "title": "Securing America's compute advantage: Anthropic’s position on the diffusion rule",
+      "url": "https://www.anthropic.com/news/securing-america-s-compute-advantage-anthropic-s-position-on-the-diffusion-rule",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Securing America's compute advantage: Anthropic’s position on the diffusion rule",
+      "image_url": null,
+      "published_at": 1745971200000
+    },
+    {
+      "id": "pzyt01",
+      "title": "Introducing the Anthropic Economic Advisory Council",
+      "url": "https://www.anthropic.com/news/introducing-the-anthropic-economic-advisory-council",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing the Anthropic Economic Advisory Council",
+      "image_url": null,
+      "published_at": 1745798400000
+    },
+    {
+      "id": "48olu9",
+      "title": "Detecting and countering malicious uses of Claude: March 2025",
+      "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Detecting and countering malicious uses of Claude: March 2025",
+      "image_url": null,
+      "published_at": 1745366400000
+    },
+    {
+      "id": "1362nu",
+      "title": "Our approach to understanding and addressing AI harms",
+      "url": "https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Our approach to understanding and addressing AI harms",
+      "image_url": null,
+      "published_at": 1745193600000
+    },
+    {
+      "id": "ayyjbe",
+      "title": "Anthropic appoints Guillaume Princen as Head of EMEA and announces 100+ new roles across the region",
+      "url": "https://www.anthropic.com/news/head-of-EMEA-new-roles",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic appoints Guillaume Princen as Head of EMEA and announces 100+ new roles across the region",
+      "image_url": null,
+      "published_at": 1744070400000
+    },
+    {
+      "id": "ya0wo4",
+      "title": "Anthropic Education Report: How university students use Claude",
+      "url": "https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Anthropic Education Report: How university students use Claude",
+      "image_url": null,
+      "published_at": 1744070400000
+    },
+    {
+      "id": "yxanwc",
+      "title": "Introducing Anthropic's first developer conference: Code with Claude",
+      "url": "https://www.anthropic.com/news/Introducing-code-with-claude",
+      "source": "Anthropic News",
+      "category": "wildcard",
+      "summary": "Introducing Anthropic's first developer conference: Code with Claude",
+      "image_url": null,
+      "published_at": 1743638400000
+    }
+  ],
+  "collected_at": 1787379443511,
+  "curated_at": 1787379496616
+}
