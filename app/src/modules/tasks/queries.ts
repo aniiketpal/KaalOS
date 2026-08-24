@@ -1,16 +1,16 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
+import { nanoid } from 'nanoid'
 import { getDb } from '../../core/db/client'
-import { bumpVersion, subscribeVersion } from '../../shared/hooks/versionBus'
+import { bumpVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 import { awardXp, revokeXp, XP_VALUES } from '../../core/db/xp'
-import type { TaskRow } from './types'
+import { nextOccurrence, parseRule } from '../../core/time/recurrence'
+import { todayStr, type TaskRow } from './types'
 import type { ActivityRow } from '../activities/ActivityForm'
 
 export interface TaskWithActivity extends TaskRow {
   activity?: ActivityRow | null
 }
-import { nanoid } from 'nanoid'
-import { nextOccurrence, parseRule } from '../../core/time/recurrence'
-import { todayStr } from './types'
 
 async function loadTasks(db: Awaited<ReturnType<typeof getDb>>): Promise<TaskWithActivity[]> {
   const tasks = await db.all<TaskRow>(`SELECT * FROM tasks ORDER BY sort_order ASC, created_at ASC`)
@@ -20,19 +20,7 @@ async function loadTasks(db: Awaited<ReturnType<typeof getDb>>): Promise<TaskWit
 }
 
 export function useTasks(): TaskWithActivity[] {
-  const [rows, setRows] = useState<TaskWithActivity[]>([])
-  useEffect(() => {
-    let alive = true
-    const run = async () => {
-      const db = await getDb()
-      const data = await loadTasks(db)
-      if (alive) setRows(data)
-    }
-    run()
-    const unsub = subscribeVersion(run)
-    return () => { alive = false; unsub() }
-  }, [])
-  return rows
+  return useLiveQuery(async () => loadTasks(await getDb()), [] as TaskWithActivity[]).data
 }
 
 export async function createTask(input: {

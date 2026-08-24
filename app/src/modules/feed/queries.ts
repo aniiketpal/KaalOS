@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
 import { getDb } from '../../core/db/client'
-import { subscribeVersion, bumpVersion } from '../../shared/hooks/versionBus'
+import { bumpVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 
 export interface FeedItem {
   id: string
@@ -76,7 +76,6 @@ export async function refreshFeed(): Promise<void> {
   if (since?.max && Date.now() - since.max < 30 * 60 * 1000) return // 30-min cache
 
   const items: Omit<FeedItem, 'id' | 'saved' | 'read' | 'fetched_at'>[] = []
-
   // HN top stories
   try {
     const topIds: number[] = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
@@ -95,14 +94,43 @@ export async function refreshFeed(): Promise<void> {
 
   // Dev.to articles
   try {
-    const articles: { title: string; url: string; description: string; published_at: string }[] =
-      await fetch('https://dev.to/api/articles?top=7&per_page=10').then((r) => r.json())
+    const articles: {
+      title: string
+      url: string
+      description: string
+      cover_image: string | null
+      social_image: string | null
+      published_at: string
+    }[] = await fetch('https://dev.to/api/articles?top=7&per_page=10').then((r) => r.json())
     for (const a of articles) {
-      items.push({ title: a.title, url: a.url, source: 'devto', category: 'tutorial', summary: a.description ?? null, image_url: null, published_at: a.published_at ? new Date(a.published_at).getTime() : null })
+      items.push({
+        title: a.title,
+        url: a.url,
+        source: 'devto',
+        category: 'tutorial',
+        summary: a.description ?? null,
+        image_url: a.cover_image || a.social_image || null,
+        published_at: a.published_at ? new Date(a.published_at).getTime() : null,
+      })
     }
   } catch { /* skip if offline */ }
 
   await cacheItems(items)
+}
+
+/**
+ * Loads the feed on first view. Fetches only when the cache is empty or older
+ * than 30 minutes, so opening the Feed page repeatedly doesn't hammer the
+ * network. Safe to call on mount.
+ */
+export async function ensureFeedLoaded(): Promise<void> {
+  const db = await getDb()
+  const row = await db.get<{ max: number | null; n: number }>(
+    'SELECT MAX(fetched_at) as max, COUNT(*) as n FROM feed_items',
+  )
+  const empty = !row?.n
+  const stale = !row?.max || Date.now() - row.max > 30 * 60 * 1000
+  if (empty || stale) await fetchRemoteFeed()
 }
 
 export async function markRead(id: string): Promise<void> {
@@ -118,42 +146,26 @@ export async function saveToNote(id: string): Promise<void> {
 }
 
 export function useFeedItems(category?: Category) {
-  const [items, setItems] = useState<FeedItem[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
+  const { data: items, loading } = useLiveQuery<FeedItem[]>(
+    async () => {
       const db = await getDb()
       const sql = category
         ? 'SELECT * FROM feed_items WHERE category = ? ORDER BY published_at DESC LIMIT 50'
         : 'SELECT * FROM feed_items ORDER BY published_at DESC LIMIT 50'
-      const params = category ? [category] : []
-      const data = await db.all<FeedItem>(sql, params)
-      if (!cancelled) { setItems(data); setLoading(false) }
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [category])
-
+      return db.all<FeedItem>(sql, category ? [category] : [])
+    },
+    [],
+    [category],
+  )
   return { items, loading }
 }
 
 export function useUnreadCount(): number {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const db = await getDb()
-      const row = await db.get<{ n: number }>('SELECT COUNT(*) as n FROM feed_items WHERE read=0')
-      if (!cancelled) setCount(row?.n ?? 0)
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [])
-  return count
+  return useLiveQuery<number>(async () => {
+    const db = await getDb()
+    const row = await db.get<{ n: number }>('SELECT COUNT(*) as n FROM feed_items WHERE read=0')
+    return row?.n ?? 0
+  }, 0).data
 }
 
 export { CATEGORIES }

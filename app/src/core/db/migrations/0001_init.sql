@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS schema_migrations (version INTEGER PRIMARY KEY);
 
-CREATE TABLE activities (
+CREATE TABLE IF NOT EXISTS activities (
   id TEXT PRIMARY KEY,                   -- nanoid
   name TEXT NOT NULL,
   color TEXT NOT NULL,                   -- accent key e.g. 'blue'

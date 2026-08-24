@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { getDb } from '../../core/db/client'
-import { subscribeVersion, bumpVersion } from '../../shared/hooks/versionBus'
+import { bumpVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 import { awardXp, XP_VALUES } from '../../core/db/xp'
 import type { Exercise, WorkoutSession, WorkoutSet, BodyMetric } from './types'
 
@@ -111,32 +111,13 @@ export async function latestBodyMetric(): Promise<BodyMetric | null> {
 }
 
 export function useExercises() {
-  const [exercises, setExercises] = useState<Exercise[]>([])
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const data = await listExercises()
-      if (!cancelled) setExercises(data)
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [])
-  return exercises
+  return useLiveQuery(listExercises, [] as Exercise[]).data
 }
 
 export function usePastSessions() {
-  const [sessions, setSessions] = useState<(WorkoutSession & { set_count: number })[]>([])
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const data = await listPastSessions()
-      if (!cancelled) { setSessions(data); setLoading(false) }
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [])
+  const { data: sessions, loading } = useLiveQuery(
+    listPastSessions,
+    [] as (WorkoutSession & { set_count: number })[],
+  )
   return { sessions, loading }
 }

@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { getDb } from '../../core/db/client'
-import { subscribeVersion, bumpVersion } from '../../shared/hooks/versionBus'
+import { bumpVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 import { awardXp, revokeXp, XP_VALUES } from '../../core/db/xp'
 import { todayStr } from '../tasks/types'
 import type { Habit, HabitWithToday } from './types'
@@ -62,43 +62,41 @@ export async function unlogHabit(habitId: string, date?: string): Promise<void> 
   await logHabit(habitId, date ?? todayStr(), null)
 }
 
+const DAY_MS = 86_400_000
+const prevDay = (s: string): string => {
+  const d = new Date(s + 'T00:00:00')
+  d.setDate(d.getDate() - 1)
+  return d.toISOString().slice(0, 10)
+}
+
+/** Current + longest daily streak from a set of 'YYYY-MM-DD' done-dates, relative to today. */
+function streaksFromDoneDates(doneDates: Set<string>): { current: number; longest: number } {
+  let cursor = todayStr()
+  if (!doneDates.has(cursor)) cursor = prevDay(cursor)
+  let current = 0
+  while (doneDates.has(cursor)) {
+    current++
+    cursor = prevDay(cursor)
+  }
+
+  let longest = 0
+  let run = 0
+  let prev: string | null = null
+  for (const d of Array.from(doneDates).sort()) {
+    run = prev && new Date(d + 'T00:00:00').getTime() - new Date(prev + 'T00:00:00').getTime() === DAY_MS ? run + 1 : 1
+    longest = Math.max(longest, run)
+    prev = d
+  }
+  return { current, longest }
+}
+
 export async function getHabitStreaks(habitId: string): Promise<{ current: number; longest: number }> {
   const db = await getDb()
   const rows = await db.all<{ date: string; status: string }>(
     'SELECT date, status FROM habit_logs WHERE habit_id = ? ORDER BY date',
     [habitId],
   )
-  const doneDates = new Set(rows.filter((r) => r.status === 'done').map((r) => r.date))
-
-  let cursor = todayStr()
-  if (!doneDates.has(cursor)) {
-    const d = new Date(cursor + 'T00:00:00')
-    d.setDate(d.getDate() - 1)
-    cursor = d.toISOString().slice(0, 10)
-  }
-  let current = 0
-  while (doneDates.has(cursor)) {
-    current++
-    const d = new Date(cursor + 'T00:00:00')
-    d.setDate(d.getDate() - 1)
-    cursor = d.toISOString().slice(0, 10)
-  }
-
-  const dates = Array.from(doneDates).sort()
-  let longest = 0
-  let run = 0
-  let prev: string | null = null
-  for (const d of dates) {
-    if (prev) {
-      const prevD = new Date(prev + 'T00:00:00')
-      const currD = new Date(d + 'T00:00:00')
-      if (currD.getTime() - prevD.getTime() === 86_400_000) { run++ } else { run = 1 }
-    } else { run = 1 }
-    longest = Math.max(longest, run)
-    prev = d
-  }
-
-  return { current, longest }
+  return streaksFromDoneDates(new Set(rows.filter((r) => r.status === 'done').map((r) => r.date)))
 }
 
 export async function listHabitsWithStats(): Promise<HabitWithToday[]> {
@@ -119,48 +117,12 @@ export async function listHabitsWithStats(): Promise<HabitWithToday[]> {
     const doneDates = new Set(
       allLogs.filter((r) => r.habit_id === habit.id && r.status === 'done').map((r) => r.date),
     )
-
-    let cursor = today
-    if (!doneDates.has(cursor)) {
-      const d = new Date(cursor + 'T00:00:00'); d.setDate(d.getDate() - 1)
-      cursor = d.toISOString().slice(0, 10)
-    }
-    let current = 0
-    while (doneDates.has(cursor)) {
-      current++
-      const d = new Date(cursor + 'T00:00:00'); d.setDate(d.getDate() - 1)
-      cursor = d.toISOString().slice(0, 10)
-    }
-
-    const sorted = Array.from(doneDates).sort()
-    let longest = 0, run = 0, prev: string | null = null
-    for (const d of sorted) {
-      if (prev) {
-        const gap = new Date(d + 'T00:00:00').getTime() - new Date(prev + 'T00:00:00').getTime()
-        run = gap === 86_400_000 ? run + 1 : 1
-      } else { run = 1 }
-      longest = Math.max(longest, run)
-      prev = d
-    }
-
+    const { current, longest } = streaksFromDoneDates(doneDates)
     return { ...habit, today_status: todayMap.get(habit.id) ?? null, current_streak: current, longest_streak: longest }
   }))
 }
 
 export function useHabits() {
-  const [habits, setHabits] = useState<HabitWithToday[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const data = await listHabitsWithStats()
-      if (!cancelled) { setHabits(data); setLoading(false) }
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [])
-
+  const { data: habits, loading } = useLiveQuery(listHabitsWithStats, [] as HabitWithToday[])
   return { habits, loading }
 }

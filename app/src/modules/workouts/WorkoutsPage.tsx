@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Plus, Dumbbell, Clock, Trash2, CheckCircle, X } from 'lucide-react'
 import { PageHeader } from '../../shared/ui/PageHeader'
+import { Modal } from '../../shared/ui/Modal'
 import {
   useExercises, usePastSessions, createExercise, startWorkout, endWorkout,
   logSet, listSessionSets, deleteSet, deleteExercise, saveBodyMetric,
@@ -11,6 +12,17 @@ import { clsx } from 'clsx'
 import type { Exercise, WorkoutSet } from './types'
 
 type View = 'log' | 'history' | 'exercises'
+
+/** Group a list into buckets keyed by `key(item)`, preserving insertion order. */
+function groupBy<T>(items: T[], key: (item: T) => string): Record<string, T[]> {
+  const out: Record<string, T[]> = {}
+  for (const item of items) {
+    const k = key(item)
+    if (!out[k]) out[k] = []
+    out[k].push(item)
+  }
+  return out
+}
 
 export function WorkoutsPage() {
   const [view, setView] = useState<View>('log')
@@ -121,12 +133,7 @@ function ActiveSession({ sessionId, exercises, onEnd }: {
   const secs = String(elapsed % 60).padStart(2, '0')
 
   // Group sets by exercise
-  const grouped = sets.reduce<Record<string, WorkoutSet[]>>((acc, s) => {
-    const key = s.exercise_name ?? s.exercise_id
-    if (!acc[key]) acc[key] = []
-    acc[key].push(s)
-    return acc
-  }, {})
+  const grouped = groupBy(sets, (s) => s.exercise_name ?? s.exercise_id)
 
   return (
     <div className="max-w-2xl">
@@ -240,12 +247,7 @@ function ExerciseLibrary({ exercises }: { exercises: Exercise[] }) {
     setName(''); setCategory('')
   }
 
-  const grouped = exercises.reduce<Record<string, Exercise[]>>((acc, e) => {
-    const cat = e.category ?? 'other'
-    if (!acc[cat]) acc[cat] = []
-    acc[cat].push(e)
-    return acc
-  }, {})
+  const grouped = groupBy(exercises, (e) => e.category ?? 'other')
 
   return (
     <div className="max-w-2xl">
@@ -327,36 +329,22 @@ function BodyMetricsButton() {
       >
         Body metrics
       </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
-            onClick={(e) => { if (e.target === e.currentTarget) setOpen(false) }}
-          >
-            <motion.div
-              initial={{ scale: 0.96 }} animate={{ scale: 1 }}
-              className="w-full max-w-xs rounded-xl border border-border-subtle bg-bg-secondary p-5 shadow-xl"
-            >
-              <h3 className="mb-4 text-sm font-medium text-text-primary">Body metrics</h3>
-              <div className="mb-4 grid grid-cols-2 gap-3">
-                <div>
-                  <label className="mb-1 block text-xs text-text-muted">Height (cm)</label>
-                  <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-md border border-border-subtle bg-bg-tertiary px-2 py-2 text-sm text-text-primary outline-none" />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs text-text-muted">Weight (kg)</label>
-                  <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full rounded-md border border-border-subtle bg-bg-tertiary px-2 py-2 text-sm text-text-primary outline-none" />
-                </div>
-              </div>
-              <div className="flex justify-end gap-2">
-                <button onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm text-text-secondary hover:bg-bg-hover">Cancel</button>
-                <button onClick={save} className="rounded-md bg-accent-blue px-4 py-2 text-sm font-medium text-text-inverse">Save</button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Modal open={open} onClose={() => setOpen(false)} title="Body metrics" maxWidth={320}>
+        <div className="mb-4 grid grid-cols-2 gap-3">
+          <div>
+            <label className="mb-1 block text-xs text-text-muted">Height (cm)</label>
+            <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} className="w-full rounded-md border border-border-subtle bg-bg-tertiary px-2 py-2 text-sm text-text-primary outline-none" />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs text-text-muted">Weight (kg)</label>
+            <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="w-full rounded-md border border-border-subtle bg-bg-tertiary px-2 py-2 text-sm text-text-primary outline-none" />
+          </div>
+        </div>
+        <div className="flex justify-end gap-2">
+          <button onClick={() => setOpen(false)} className="rounded-md px-3 py-2 text-sm text-text-secondary hover:bg-bg-hover">Cancel</button>
+          <button onClick={save} className="rounded-md bg-accent-blue px-4 py-2 text-sm font-medium text-text-inverse">Save</button>
+        </div>
+      </Modal>
     </>
   )
 }

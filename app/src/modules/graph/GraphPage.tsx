@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { GitBranch } from 'lucide-react'
 import { PageHeader } from '../../shared/ui/PageHeader'
 import { loadGraph, type GraphNode, type GraphEdge } from './data'
-import { subscribeVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 
 const GROUP_COLORS: Record<string, string> = {
   activity: '#c45a28',
@@ -54,23 +54,11 @@ function layout(nodes: GraphNode[]): { positions: Map<string, Pos>; width: numbe
 }
 
 export function GraphPage() {
-  const [nodes, setNodes] = useState<GraphNode[]>([])
-  const [edges, setEdges] = useState<GraphEdge[]>([])
-  const [loading, setLoading] = useState(true)
+  const { data: graph, loading } = useLiveQuery(loadGraph, { nodes: [] as GraphNode[], edges: [] as GraphEdge[] })
+  const { nodes, edges } = graph
   const [tooltip, setTooltip] = useState<{ x: number; y: number; label: string; group: string; id: string } | null>(null)
 
   const { positions, width, height } = layout(nodes)
-
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const g = await loadGraph()
-      if (!cancelled) { setNodes(g.nodes); setEdges(g.edges); setLoading(false) }
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [])
 
   // Adjacency map for hover
   const neighbors = new Map<string, Set<string>>()
@@ -231,5 +219,3 @@ export function GraphPage() {
     </div>
   )
 }
-
-// ── cleanup unused exports ────────────────────────────────────────────────

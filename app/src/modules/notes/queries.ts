@@ -1,13 +1,9 @@
-import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { getDb } from '../../core/db/client'
-import { subscribeVersion, bumpVersion } from '../../shared/hooks/versionBus'
+import { bumpVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 import type { Note } from './types'
 import { computeNoteEmbedding } from '../../core/graph/embeddings'
-
-export function createNoteStore() {
-  return { notes: [] as Note[], loading: true }
-}
 
 export async function listNotes(activityId?: string, notebook?: string): Promise<Note[]> {
   const db = await getDb()
@@ -109,19 +105,10 @@ export async function listNotebooks(): Promise<string[]> {
 }
 
 export function useNotes(activityId?: string, notebook?: string) {
-  const [notes, setNotes] = useState<Note[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const data = await listNotes(activityId, notebook)
-      if (!cancelled) { setNotes(data); setLoading(false) }
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [activityId, notebook])
-
+  const { data: notes, loading } = useLiveQuery(
+    () => listNotes(activityId, notebook),
+    [] as Note[],
+    [activityId, notebook],
+  )
   return { notes, loading }
 }

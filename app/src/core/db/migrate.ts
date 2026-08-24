@@ -13,8 +13,13 @@ import { MIGRATIONS } from './migrations'
  * IF NOT EXISTS so re-runs are safe.
  */
 
+// Maps each migration to the user tables it creates, so repairMigrations can
+// detect a partially-applied migration (table missing) and re-run it. Note:
+// schema_migrations is intentionally excluded — it is created separately and
+// filtered out of the existing-tables query, so listing it here would make
+// version 1 look permanently "unapplied" and re-run every launch.
 const TABLES_PER_MIGRATION: Record<number, string[]> = {
-  1: ['schema_migrations', 'activities'],
+  1: ['activities'],
   2: ['tasks'],
   3: ['focus_sessions'],
   4: ['notes', 'journal_entries', 'habits', 'habit_logs'],

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { PageHeader } from '../../shared/ui/PageHeader'
 import { getDb } from '../../core/db/client'
-import { subscribeVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 import { useActivities } from '../activities/queries'
 import { Heatmap } from '../../shared/ui/Heatmap'
 import { PerformanceChart, type ChartSeries } from '../../shared/ui/PerformanceChart'
@@ -48,6 +48,28 @@ function weekStartOf(dateStr: string): string {
 
 const DAY_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
+type StreakRow = { activity_id: string; name: string; current: number; longest: number }
+interface ProgressData {
+  heatmapData: Map<string, { minutes: number; target: number }>
+  weekRows: WeekRow[]
+  monthRows: MonthRow[]
+  streaks: StreakRow[]
+  totalPomodoros: number
+  totalMinutes: number
+  bestStreak: number
+  weekXp: XpEvent[]
+}
+const EMPTY_PROGRESS: ProgressData = {
+  heatmapData: new Map(),
+  weekRows: [],
+  monthRows: [],
+  streaks: [],
+  totalPomodoros: 0,
+  totalMinutes: 0,
+  bestStreak: 0,
+  weekXp: [],
+}
+
 export function ProgressPage() {
   const activities = useActivities()
   const [tab, setTab] = useState<Tab>('heatmap')
@@ -57,16 +79,7 @@ export function ProgressPage() {
 
   useEffect(() => { if (!activityId && activities.length) setActivityId(activities[0]!.id) }, [activities, activityId])
 
-  const [heatmapData, setHeatmapData] = useState<Map<string, { minutes: number; target: number }>>(new Map())
-  const [weekRows, setWeekRows] = useState<WeekRow[]>([])
-  const [monthRows, setMonthRows] = useState<MonthRow[]>([])
-  const [streaks, setStreaks] = useState<{ activity_id: string; name: string; current: number; longest: number }[]>([])
-  const [totalPomodoros, setTotalPomodoros] = useState(0)
-  const [totalMinutes, setTotalMinutes] = useState(0)
-  const [bestStreak, setBestStreak] = useState(0)
-  const [weekXp, setWeekXp] = useState<XpEvent[]>([])
-
-  const load = async () => {
+  const load = async (): Promise<ProgressData> => {
     const db = await getDb()
     const today = todayStr()
 
@@ -75,56 +88,47 @@ export function ProgressPage() {
       `SELECT activity_id, date(started_at/1000,'unixepoch','localtime') AS d, SUM(actual_minutes) AS m
        FROM focus_sessions GROUP BY activity_id, d`,
     )
-    const map = new Map<string, { minutes: number; target: number }>()
+    const heatmapData = new Map<string, { minutes: number; target: number }>()
     const perActivity: Record<string, DailyLog> = {}
-    let totalMin = 0
-    let totalPom = 0
+    let totalMinutes = 0
+    let totalPomodoros = 0
     for (const r of all) {
       const act = activities.find((a) => a.id === r.activity_id)
       if (!act) continue
-      const prev = map.get(r.d)
-      map.set(r.d, {
-        minutes: (prev?.minutes ?? 0) + r.m,
-        target: act.daily_target,
-      })
+      const prev = heatmapData.get(r.d)
+      heatmapData.set(r.d, { minutes: (prev?.minutes ?? 0) + r.m, target: act.daily_target })
       perActivity[r.activity_id] ??= new Map()
-      const prevAct = perActivity[r.activity_id]!.get(r.d) ?? 0
-      perActivity[r.activity_id]!.set(r.d, prevAct + r.m)
-      totalMin += r.m
-      totalPom += Math.round(r.m / 25)
+      perActivity[r.activity_id]!.set(r.d, (perActivity[r.activity_id]!.get(r.d) ?? 0) + r.m)
+      totalMinutes += r.m
+      totalPomodoros += Math.round(r.m / 25)
     }
-    setHeatmapData(map)
-    setTotalMinutes(totalMin)
-    setTotalPomodoros(totalPom)
 
-    const wr = await weeklyPerActivity(db, weekAnchor, addDays(weekAnchor, 7))
-    setWeekRows(wr)
+    const weekRows = await weeklyPerActivity(db, weekAnchor, addDays(weekAnchor, 7))
+    const monthRows = await monthlyByActivity(db, monthAnchor, nextMonthStart(monthAnchor))
 
-    const mr = await monthlyByActivity(db, monthAnchor, nextMonthStart(monthAnchor))
-    setMonthRows(mr)
-
-    const streakRows = await Promise.all(activities.map(async (a) => ({
+    const streaks: StreakRow[] = await Promise.all(activities.map(async (a) => ({
       activity_id: a.id,
       name: a.name,
       current: currentStreak(perActivity[a.id] ?? new Map(), today, a.daily_target),
       longest: longestStreak(perActivity[a.id] ?? new Map(), today, a.daily_target),
     })))
-    setStreaks(streakRows.sort((x, y) => y.current - x.current))
-    setBestStreak(Math.max(0, ...streakRows.map((s) => s.current)))
+    streaks.sort((x, y) => y.current - x.current)
 
-    // Load XP for review tab
+    // XP earned this (calendar) week — for the Review tab
     const weekStartMs = new Date(weekStartOf(today)).getTime()
     const weekEndMs = weekStartMs + 7 * 24 * 60 * 60 * 1000
     const hist = await xpHistory(50)
-    setWeekXp(hist.filter((e) => e.created_at >= weekStartMs && e.created_at < weekEndMs))
+    const weekXp = hist.filter((e) => e.created_at >= weekStartMs && e.created_at < weekEndMs)
+
+    return {
+      heatmapData, weekRows, monthRows, streaks, totalPomodoros, totalMinutes,
+      bestStreak: Math.max(0, ...streaks.map((s) => s.current)),
+      weekXp,
+    }
   }
 
-  useEffect(() => {
-    load()
-    const unsub = subscribeVersion(load)
-    return unsub
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activities, weekAnchor, monthAnchor])
+  const { data } = useLiveQuery(load, EMPTY_PROGRESS, [activities, weekAnchor, monthAnchor])
+  const { heatmapData, weekRows, monthRows, streaks, totalPomodoros, totalMinutes, bestStreak, weekXp } = data
 
   // Build chart data for the selected week
   const chartSeries = useMemo<ChartSeries[]>(() => {

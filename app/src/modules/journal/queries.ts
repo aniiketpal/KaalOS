@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import { getDb } from '../../core/db/client'
-import { subscribeVersion, bumpVersion } from '../../shared/hooks/versionBus'
+import { bumpVersion } from '../../shared/hooks/versionBus'
+import { useLiveQuery } from '../../shared/hooks/useLiveQuery'
 import { awardXp, XP_VALUES } from '../../core/db/xp'
 import type { JournalEntry } from './types'
 
@@ -82,19 +82,9 @@ export async function journalStreak(): Promise<number> {
 }
 
 export function useJournalEntries() {
-  const [entries, setEntries] = useState<JournalEntry[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let cancelled = false
-    const load = async () => {
-      const data = await listJournalEntries(100)
-      if (!cancelled) { setEntries(data); setLoading(false) }
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { cancelled = true; unsub() }
-  }, [])
-
+  const { data: entries, loading } = useLiveQuery(
+    () => listJournalEntries(100),
+    [] as JournalEntry[],
+  )
   return { entries, loading }
 }

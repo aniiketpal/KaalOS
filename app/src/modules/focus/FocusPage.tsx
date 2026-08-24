@@ -63,7 +63,6 @@ export function FocusPage() {
   const mm = Math.floor(secondsRemaining / 60)
   const ss = String(secondsRemaining % 60).padStart(2, '0')
 
-  const isComplete = active && secondsRemaining === 0 && !onBreak
   const progress = active
     ? (active.session.plannedMinutes * 60 - secondsRemaining) / (active.session.plannedMinutes * 60)
     : 0
@@ -120,7 +119,7 @@ export function FocusPage() {
                 progress={onBreak ? 1 - progress : progress}
                 size={320}
                 strokeWidth={10}
-                color={onBreak ? '#3a8a7a' : (selectedColor === 'var(--accent-blue)' ? '#c45a28' : '#c45a28')}
+                color={onBreak ? '#3a8a7a' : '#c45a28'}
               />
               <div className="absolute inset-0 grid place-items-center">
                 <div className="text-center">
@@ -369,8 +368,6 @@ export function FocusPage() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {isComplete && null}
 
       <ManualLogModal
         open={manualOpen}

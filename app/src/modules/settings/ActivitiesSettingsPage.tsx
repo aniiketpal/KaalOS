@@ -2,35 +2,17 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Pencil, Archive, Undo2 } from 'lucide-react'
 import { getDb } from '../../core/db/client'
-import { bumpVersion, subscribeVersion } from '../../shared/hooks/versionBus'
-import { useEffect } from 'react'
+import { bumpVersion } from '../../shared/hooks/versionBus'
 import { PageHeader } from '../../shared/ui/PageHeader'
 import { Modal } from '../../shared/ui/Modal'
 import { ActivityForm, type ActivityRow } from '../activities/ActivityForm'
+import { useActivities } from '../activities/queries'
 import { ACCENT_COLORS } from '../activities/colors'
 import { clsx } from 'clsx'
 
-function useActivitiesLive(includeArchived: boolean): ActivityRow[] {
-  const [rows, setRows] = useState<ActivityRow[]>([])
-  useEffect(() => {
-    let alive = true
-    const load = async () => {
-      const db = await getDb()
-      const data = await db.all<ActivityRow>(
-        `SELECT * FROM activities ${includeArchived ? '' : 'WHERE archived_at IS NULL'} ORDER BY created_at ASC`,
-      )
-      if (alive) setRows(data)
-    }
-    load()
-    const unsub = subscribeVersion(load)
-    return () => { alive = false; unsub() }
-  }, [includeArchived])
-  return rows
-}
-
 export function ActivitiesSettingsPage() {
   const [showArchived, setShowArchived] = useState(false)
-  const activities = useActivitiesLive(showArchived)
+  const activities = useActivities({ includeArchived: showArchived })
   const [formOpen, setFormOpen] = useState(false)
   const [editing, setEditing] = useState<ActivityRow | undefined>(undefined)
   const [archiving, setArchiving] = useState<ActivityRow | undefined>(undefined)
